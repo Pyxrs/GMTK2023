@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://cr0u0jxflsky5"]
+[gd_scene load_steps=8 format=3 uid="uid://cr0u0jxflsky5"]
+
+[ext_resource type="Shader" path="res://materials/sky.gdshader" id="1_ssgx8"]
+[ext_resource type="ArrayMesh" uid="uid://cdn7q7td08lkd" path="res://models/ship.obj" id="1_vee4d"]
+[ext_resource type="Material" uid="uid://cwsp70juogdxl" path="res://materials/wall.tres" id="2_vn33c"]
+[ext_resource type="Material" uid="uid://c7or2p3tyf106" path="res://materials/carpet.tres" id="3_0thvg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8dj8"]
+shader = ExtResource("1_ssgx8")
+shader_parameter/background = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_bwi4a"]
+sky_material = SubResource("ShaderMaterial_x8dj8")
+
+[sub_resource type="Environment" id="Environment_8qfgn"]
+background_mode = 2
+sky = SubResource("Sky_bwi4a")
 
 [node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8qfgn")
+
+[node name="Ship" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_vee4d")
+surface_material_override/0 = ExtResource("2_vn33c")
+surface_material_override/1 = ExtResource("3_0thvg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.09247)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.957283, 1.68696, 0.682155)
+light_energy = 10.374
+shadow_enabled = true
+omni_range = 15.5104
