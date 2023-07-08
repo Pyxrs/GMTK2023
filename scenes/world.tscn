@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cr0u0jxflsky5"]
+[gd_scene load_steps=44 format=3 uid="uid://cr0u0jxflsky5"]
 
 [ext_resource type="Texture2D" uid="uid://bjujjt80eq4d0" path="res://textures/map.png" id="1_refm8"]
 [ext_resource type="PackedScene" uid="uid://ov4k80i1qwr3" path="res://scenes/ship.tscn" id="4_iqqta"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dmvmtkxsgwhcl" path="res://textures/baby_mario_lawsuit.png" id="8_kyk0m"]
 [ext_resource type="PackedScene" uid="uid://p0atae6htjno" path="res://scenes/work_position.tscn" id="8_ue6o1"]
 [ext_resource type="Texture2D" uid="uid://bqkfk2qqfc3s8" path="res://textures/vine1.png" id="9_rdsx7"]
+[ext_resource type="Texture2D" uid="uid://chu6eh2vr8tb3" path="res://textures/Garden_floor.png" id="10_3xfsy"]
 [ext_resource type="Texture2D" uid="uid://u118r01fl6q5" path="res://Crew sprites/Botany1.png" id="10_s721i"]
 [ext_resource type="Texture2D" uid="uid://dur87to6u6k86" path="res://Crew sprites/Botany2.png" id="11_4ny4v"]
 [ext_resource type="Texture2D" uid="uid://c3kqcl4s5rpb0" path="res://Crew sprites/Cyrus_Janitor.png" id="12_khwmr"]
@@ -104,6 +105,14 @@ material = SubResource("ShaderMaterial_1junh")
 size = Vector2(10, 10)
 subdivide_width = 100
 subdivide_depth = 100
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scfm0"]
+albedo_texture = ExtResource("10_3xfsy")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l1lsh"]
+material = SubResource("StandardMaterial3D_scfm0")
+size = Vector2(11, 10)
 
 [node name="World" type="Node3D"]
 
@@ -263,6 +272,10 @@ texture_filter = 0
 [node name="Sprite3D4" type="Sprite3D" parent="Props"]
 pixel_size = 0.05
 texture_filter = 0
+
+[node name="GardenWall" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.16313, -2.45795, 31.0104)
+mesh = SubResource("PlaneMesh_l1lsh")
 
 [node name="Lights" type="Node" parent="."]
 

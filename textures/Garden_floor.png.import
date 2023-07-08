@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ufmiojerksca"
-path.s3tc="res://.godot/imported/shit_cube.png-70c9359f923f648ce4cd47d225ebfd41.s3tc.ctex"
+uid="uid://chu6eh2vr8tb3"
+path="res://.godot/imported/Garden_floor.png-daf377e3ce477b18b315e5c6a2ccaf4b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/shit_cube.png"
-dest_files=["res://.godot/imported/shit_cube.png-70c9359f923f648ce4cd47d225ebfd41.s3tc.ctex"]
+source_file="res://textures/Garden_floor.png"
+dest_files=["res://.godot/imported/Garden_floor.png-daf377e3ce477b18b315e5c6a2ccaf4b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

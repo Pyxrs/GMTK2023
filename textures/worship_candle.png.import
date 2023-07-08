@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ufmiojerksca"
-path.s3tc="res://.godot/imported/shit_cube.png-70c9359f923f648ce4cd47d225ebfd41.s3tc.ctex"
+uid="uid://qo2vepr1saae"
+path.s3tc="res://.godot/imported/worship_candle.png-2b259d0851556df4b7ff5ee56a08b60e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/shit_cube.png"
-dest_files=["res://.godot/imported/shit_cube.png-70c9359f923f648ce4cd47d225ebfd41.s3tc.ctex"]
+source_file="res://textures/worship_candle.png"
+dest_files=["res://.godot/imported/worship_candle.png-2b259d0851556df4b7ff5ee56a08b60e.s3tc.ctex"]
 
 [params]
 

@@ -25,6 +25,7 @@ enum Actions {
 	SHIT,
 	PANIC,
 	WORSHIP,
+	FLEE,
 }
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
@@ -42,6 +43,7 @@ var social = randf()
 var work = randf()
 var shittiness = randf()
 var paranoia = 0.0
+var fear = 0.0
 
 var action = Actions.WORK
 
@@ -111,6 +113,9 @@ func decide_action():
 		[Actions.PANIC, (self.paranoia)],
 		[Actions.WORSHIP, (self.paranoia / 1.5) + ((1 - self.energy) / 1.5)],
 	]
+	if person == Person.SHITTER:
+		options[1][1] -= 0.5
+	
 	options.sort_custom(sort_weights)
 	var chance = randf()
 	if chance < 0.85:
@@ -135,7 +140,10 @@ func stop_action():
 	if action == Actions.EAT:
 		satiation += 1.0
 	elif action == Actions.SLEEP:
-		energy += 1.0
+		if person != Person.SHITTER:
+			energy += 1.0
+		else:
+			energy += 0.5
 	elif action == Actions.TALK:
 		social += 1.0
 	elif action == Actions.WORK:
@@ -169,6 +177,8 @@ func _on_navigation_agent_3d_navigation_finished():
 			$AnimatedSprite3D.frame = 4
 		elif action == Actions.WORSHIP:
 			$AnimatedSprite3D.frame = 5
+		elif action == Actions.FLEE:
+			$AnimatedSprite3D.frame = 6
 
 # Thoughts
 func _on_thought_timer_timeout():
