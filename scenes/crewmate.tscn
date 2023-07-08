@@ -93,7 +93,7 @@ sprite_frames = SubResource("SpriteFrames_go5s4")
 animation = &"thought"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-radius = 0.3
+radius = 0.4
 
 [node name="ActionTick" type="Timer" parent="."]
 wait_time = 15.0

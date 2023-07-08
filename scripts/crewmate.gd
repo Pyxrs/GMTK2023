@@ -156,7 +156,7 @@ func sort_weights(a, b):
 
 # Thoughts
 func _on_navigation_agent_3d_navigation_finished():
-	if randf() < 0.3:
+	if randf() < 0.6:
 		$ThoughtTimer.start()
 		$AnimatedSprite3D.show()
 		if action == Actions.EAT:
@@ -166,7 +166,7 @@ func _on_navigation_agent_3d_navigation_finished():
 		elif action == Actions.TALK:
 			$AnimatedSprite3D.frame = 2
 		elif action == Actions.WORK:
-			if randf() < 0.3:
+			if randf() < 0.1:
 				$AnimatedSprite3D.frame = 7
 			else:
 				$ThoughtTimer.stop()
