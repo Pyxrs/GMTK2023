@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cr0u0jxflsky5"]
+[gd_scene load_steps=41 format=3 uid="uid://cr0u0jxflsky5"]
 
 [ext_resource type="Texture2D" uid="uid://bjujjt80eq4d0" path="res://textures/map.png" id="1_refm8"]
 [ext_resource type="PackedScene" uid="uid://ov4k80i1qwr3" path="res://scenes/ship.tscn" id="4_iqqta"]
@@ -9,7 +9,10 @@
 [ext_resource type="Script" path="res://scripts/camera_manager.gd" id="6_2yeep"]
 [ext_resource type="Script" path="res://scripts/work_positions.gd" id="7_dtvrk"]
 [ext_resource type="PackedScene" uid="uid://b3ycp7hpdagji" path="res://scenes/crewmate.tscn" id="7_kfv73"]
+[ext_resource type="Texture2D" uid="uid://brr5syxi8auhk" path="res://textures/vine3.png" id="7_xf3b4"]
+[ext_resource type="Texture2D" uid="uid://dmvmtkxsgwhcl" path="res://textures/baby_mario_lawsuit.png" id="8_kyk0m"]
 [ext_resource type="PackedScene" uid="uid://p0atae6htjno" path="res://scenes/work_position.tscn" id="8_ue6o1"]
+[ext_resource type="Texture2D" uid="uid://bqkfk2qqfc3s8" path="res://textures/vine1.png" id="9_rdsx7"]
 [ext_resource type="Texture2D" uid="uid://u118r01fl6q5" path="res://Crew sprites/Botany1.png" id="10_s721i"]
 [ext_resource type="Texture2D" uid="uid://dur87to6u6k86" path="res://Crew sprites/Botany2.png" id="11_4ny4v"]
 [ext_resource type="Texture2D" uid="uid://c3kqcl4s5rpb0" path="res://Crew sprites/Cyrus_Janitor.png" id="12_khwmr"]
@@ -25,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cke8e4c2a8k0g" path="res://Crew sprites/rez2sprite_happy.png" id="22_ey7of"]
 [ext_resource type="Texture2D" uid="uid://dtokqx6e42hpb" path="res://Crew sprites/rez3sprite.png" id="23_i0wtr"]
 [ext_resource type="Texture2D" uid="uid://d0t3fy74b75va" path="res://Crew sprites/xaiver_poopman.png" id="24_g0clw"]
+[ext_resource type="ArrayMesh" uid="uid://dmfu3cldd0ci6" path="res://models/pot/Pot.obj" id="28_fbl8v"]
 
 [sub_resource type="Environment" id="Environment_pksq8"]
 ambient_light_source = 1
@@ -208,14 +212,14 @@ navigation_mesh = SubResource("NavigationMesh_rg6js")
 
 [node name="Props" type="Node" parent="."]
 
-[node name="Sprite3D" type="Sprite3D" parent="Props"]
+[node name="Vine1" type="Sprite3D" parent="Props"]
 transform = Transform3D(0.583541, 0, 0.812084, 0, 1, 0, -0.812084, 0, 0.583541, 9.862, 0.855, 31.865)
 pixel_size = 0.05
 texture_filter = 0
 texture = ExtResource("5_m7f5r")
 
-[node name="Sprite3D2" type="Sprite3D" parent="Props"]
-transform = Transform3D(0.994011, -0.0231315, 0.106807, 6.65631e-09, 0.977342, 0.211666, -0.109283, -0.210398, 0.971488, 4.587, -0.511, 34.477)
+[node name="Tree" type="Sprite3D" parent="Props"]
+transform = Transform3D(0.994011, -0.0231315, 0.106807, 6.65631e-09, 0.977342, 0.211666, -0.109283, -0.210398, 0.971488, 4.55697, -0.580899, 34.4961)
 pixel_size = 0.05
 texture_filter = 0
 texture = ExtResource("5_7p7nx")
@@ -229,6 +233,36 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7077, -2.62491, 8.761)
 mesh = SubResource("PlaneMesh_pl21t")
 skeleton = NodePath("../..")
+
+[node name="Sprite3D" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.726575, 0, -0.687087, 0, 1, 0, 0.687087, 0, -0.726575, 8.509, 1.471, 34.945)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("7_xf3b4")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23787, -1.43894, 34.0297)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("8_kyk0m")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Props"]
+transform = Transform3D(0.9688, -0.039284, 0.244711, 0, 0.987359, 0.158503, -0.247844, -0.153557, 0.956553, 4.58064, 2.27352, 33.8591)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("9_rdsx7")
+
+[node name="Sprite3D6" type="Sprite3D" parent="Props"]
+pixel_size = 0.05
+texture_filter = 0
+
+[node name="Sprite3D5" type="Sprite3D" parent="Props"]
+pixel_size = 0.05
+texture_filter = 0
+
+[node name="Sprite3D4" type="Sprite3D" parent="Props"]
+pixel_size = 0.05
+texture_filter = 0
 
 [node name="Lights" type="Node" parent="."]
 
@@ -442,6 +476,10 @@ sprite = ExtResource("23_i0wtr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97, -2.502, -0.768)
 person = 9
 sprite = ExtResource("24_g0clw")
+
+[node name="Pot" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.41149, 0, 0, 0, 3.41106, 0.0547166, 0, -0.0547166, 3.41106, 6.27875, -1.97923, 33.9616)
+mesh = ExtResource("28_fbl8v")
 
 [connection signal="pressed" from="UI/Button" to="Cameras" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Button2" to="Cameras" method="_on_button_2_pressed"]
