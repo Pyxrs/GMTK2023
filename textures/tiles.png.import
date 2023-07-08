@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vs73n7u46kro"
-path="res://.godot/imported/shitty_carpet.png-8171998034e5ef1854abb5440e222c9a.ctex"
+uid="uid://bo2wx1ydspts2"
+path="res://.godot/imported/tiles.png-fd1e809407e1b022bee2996923837492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/shitty_carpet.png"
-dest_files=["res://.godot/imported/shitty_carpet.png-8171998034e5ef1854abb5440e222c9a.ctex"]
+source_file="res://textures/tiles.png"
+dest_files=["res://.godot/imported/tiles.png-fd1e809407e1b022bee2996923837492.ctex"]
 
 [params]
 

@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vs73n7u46kro"
-path="res://.godot/imported/shitty_carpet.png-8171998034e5ef1854abb5440e222c9a.ctex"
+uid="uid://mrbbr4oo0e46"
+path.s3tc="res://.godot/imported/exterior.png-832cc86e442d434ffb18b31fd4f38f14.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://textures/shitty_carpet.png"
-dest_files=["res://.godot/imported/shitty_carpet.png-8171998034e5ef1854abb5440e222c9a.ctex"]
+source_file="res://textures/exterior.png"
+dest_files=["res://.godot/imported/exterior.png-832cc86e442d434ffb18b31fd4f38f14.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

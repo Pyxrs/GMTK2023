@@ -1,0 +1,71 @@
+[gd_scene load_steps=17 format=3 uid="uid://b06jutsrkpv8m"]
+
+[ext_resource type="Shader" path="res://materials/sky.gdshader" id="1_5mn0h"]
+[ext_resource type="ArrayMesh" path="res://models/exterior.obj" id="2_axmh1"]
+[ext_resource type="Shader" path="res://materials/window.gdshader" id="3_xc68b"]
+[ext_resource type="Texture2D" uid="uid://djoism40fdgcs" path="res://textures/StellerEdge.png" id="4_jdgj1"]
+[ext_resource type="Shader" path="res://materials/pixel.gdshader" id="5_7n7o6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fm160"]
+shader = ExtResource("1_5mn0h")
+shader_parameter/background = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_bwi4a"]
+sky_material = SubResource("ShaderMaterial_fm160")
+
+[sub_resource type="Environment" id="Environment_ifu4h"]
+background_mode = 2
+sky = SubResource("Sky_bwi4a")
+
+[sub_resource type="Gradient" id="Gradient_rsn07"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_o4ndg"]
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0eg4y"]
+color_ramp = SubResource("Gradient_rsn07")
+noise = SubResource("FastNoiseLite_o4ndg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvlm8"]
+albedo_texture = SubResource("NoiseTexture2D_0eg4y")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_erqug"]
+size = Vector2(8.5, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yuirf"]
+render_priority = 0
+shader = ExtResource("3_xc68b")
+shader_parameter/dimensions = Vector2(1024, 600)
+shader_parameter/size = Vector2(8.5, 2)
+shader_parameter/logo = ExtResource("4_jdgj1")
+
+[sub_resource type="BoxMesh" id="BoxMesh_xirif"]
+size = Vector3(1.96, 1.115, 3.305)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rut7j"]
+render_priority = 0
+shader = ExtResource("5_7n7o6")
+
+[node name="Title" type="Node3D"]
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ifu4h")
+
+[node name="Exterior" type="MeshInstance3D" parent="."]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, -21.8318)
+mesh = ExtResource("2_axmh1")
+surface_material_override/8 = SubResource("StandardMaterial3D_wvlm8")
+metadata/_edit_group_ = true
+
+[node name="Logo" type="MeshInstance3D" parent="Exterior"]
+transform = Transform3D(-0.00334408, -0.0627984, -0.108029, 0, 0.108067, -0.0628209, 0.124955, -0.00168063, -0.00289109, -1.17736, 0.629135, 0.273409)
+mesh = SubResource("PlaneMesh_erqug")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_yuirf")
+
+[node name="Pixelizer" type="MeshInstance3D" parent="Exterior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00928493, 0)
+mesh = SubResource("BoxMesh_xirif")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_rut7j")

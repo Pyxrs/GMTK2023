@@ -1,36 +1,302 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr0u0jxflsky5"]
+[gd_scene load_steps=17 format=3 uid="uid://cr0u0jxflsky5"]
 
-[ext_resource type="Shader" path="res://materials/sky.gdshader" id="1_ssgx8"]
-[ext_resource type="ArrayMesh" uid="uid://cdn7q7td08lkd" path="res://models/ship.obj" id="1_vee4d"]
-[ext_resource type="Material" uid="uid://cwsp70juogdxl" path="res://materials/wall.tres" id="2_vn33c"]
-[ext_resource type="Material" uid="uid://c7or2p3tyf106" path="res://materials/carpet.tres" id="3_0thvg"]
+[ext_resource type="Texture2D" uid="uid://bjujjt80eq4d0" path="res://textures/map.png" id="1_refm8"]
+[ext_resource type="PackedScene" uid="uid://ov4k80i1qwr3" path="res://scenes/ship.tscn" id="4_iqqta"]
+[ext_resource type="LightmapGIData" uid="uid://wmupfcwr2ebt" path="res://world.lmbake" id="4_thi2i"]
+[ext_resource type="Shader" path="res://materials/water.gdshader" id="5_lkere"]
+[ext_resource type="Texture2D" uid="uid://cc3bv84o0fypv" path="res://textures/wall_vine1.png" id="5_m7f5r"]
+[ext_resource type="Script" path="res://scripts/camera_manager.gd" id="6_2yeep"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8dj8"]
-shader = ExtResource("1_ssgx8")
-shader_parameter/background = Color(0, 0, 0, 1)
+[sub_resource type="Environment" id="Environment_pksq8"]
+ambient_light_source = 1
+tonemap_mode = 1
 
-[sub_resource type="Sky" id="Sky_bwi4a"]
-sky_material = SubResource("ShaderMaterial_x8dj8")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr88n"]
+bg_color = Color(1, 0.901961, 0, 1)
 
-[sub_resource type="Environment" id="Environment_8qfgn"]
-background_mode = 2
-sky = SubResource("Sky_bwi4a")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hk7lv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fwcys"]
+noise = SubResource("FastNoiseLite_hk7lv")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vqrc3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tlhcq"]
+noise = SubResource("FastNoiseLite_vqrc3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghjsj"]
+render_priority = 0
+shader = ExtResource("5_lkere")
+shader_parameter/beer_factor = 0.8
+shader_parameter/foam_distance = 0.01
+shader_parameter/foam_max_distance = 0.4
+shader_parameter/foam_min_distance = 0.04
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/surface_noise_tiling = Vector2(1, 4)
+shader_parameter/surface_noise_scroll = Vector3(0.03, 0.03, 0)
+shader_parameter/surface_noise_cutoff = 0.777
+shader_parameter/surface_distortion_amount = 0.27
+shader_parameter/_DepthGradientShallow = Color(0.325, 0.807, 0.971, 0.725)
+shader_parameter/_DepthGradientDeep = Color(0.086, 0.407, 1, 0.749)
+shader_parameter/_DepthMaxDistance = 1.0
+shader_parameter/_DepthFactor = 2.5
+shader_parameter/surfaceNoise = SubResource("NoiseTexture2D_tlhcq")
+shader_parameter/distortNoise = SubResource("NoiseTexture2D_fwcys")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k1oqt"]
+material = SubResource("ShaderMaterial_ghjsj")
+size = Vector2(5.8, 5.8)
+subdivide_width = 100
+subdivide_depth = 100
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1junh"]
+render_priority = 0
+shader = ExtResource("5_lkere")
+shader_parameter/beer_factor = 0.8
+shader_parameter/foam_distance = 0.01
+shader_parameter/foam_max_distance = 0.4
+shader_parameter/foam_min_distance = 0.04
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/surface_noise_tiling = Vector2(1, 4)
+shader_parameter/surface_noise_scroll = Vector3(0.03, 0.03, 0)
+shader_parameter/surface_noise_cutoff = 0.777
+shader_parameter/surface_distortion_amount = 0.27
+shader_parameter/_DepthGradientShallow = Color(0.325, 0.807, 0.971, 0.725)
+shader_parameter/_DepthGradientDeep = Color(0.086, 0.407, 1, 0.749)
+shader_parameter/_DepthMaxDistance = 1.0
+shader_parameter/_DepthFactor = 1.15
+shader_parameter/surfaceNoise = SubResource("NoiseTexture2D_tlhcq")
+shader_parameter/distortNoise = SubResource("NoiseTexture2D_fwcys")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pl21t"]
+material = SubResource("ShaderMaterial_1junh")
+size = Vector2(10, 10)
+subdivide_width = 100
+subdivide_depth = 100
 
 [node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_8qfgn")
+environment = SubResource("Environment_pksq8")
 
-[node name="Ship" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_vee4d")
-surface_material_override/0 = ExtResource("2_vn33c")
-surface_material_override/1 = ExtResource("3_0thvg")
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.09247)
+[node name="TextureRect" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 180.0
+texture = ExtResource("1_refm8")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.957283, 1.68696, 0.682155)
-light_energy = 10.374
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 7.0
+offset_right = 118.0
+offset_bottom = 17.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr88n")
+
+[node name="Button2" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 33.0
+offset_right = 33.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr88n")
+
+[node name="Button3" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 48.0
+offset_right = 73.0
+offset_bottom = 58.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr88n")
+
+[node name="Button4" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 37.0
+offset_right = 138.0
+offset_bottom = 47.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr88n")
+
+[node name="Button5" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 77.0
+offset_right = 138.0
+offset_bottom = 87.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr88n")
+
+[node name="Button6" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 102.0
+offset_right = 74.0
+offset_bottom = 112.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr88n")
+
+[node name="Button7" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 98.0
+offset_right = 33.0
+offset_bottom = 108.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr88n")
+
+[node name="Button8" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 131.0
+offset_right = 32.0
+offset_bottom = 141.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr88n")
+
+[node name="Button9" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 142.0
+offset_right = 70.0
+offset_bottom = 152.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr88n")
+
+[node name="Button10" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 123.0
+offset_right = 108.0
+offset_bottom = 133.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fr88n")
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58028, 1.68696, 20.7851)
+light_energy = 2.0
 shadow_enabled = true
 omni_range = 15.5104
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25056, 1.68696, 31.24)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 9.18712
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95744, -0.0550082, 31.24)
+light_energy = 4.0
+shadow_enabled = true
+omni_range = 7.33687
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0581, -0.0550082, 31.24)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 6.91167
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.367, 0.760329, 19.8331)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 7.33687
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7434, 0.370398, 9.14442)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 10.1161
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105725, 0.543712, 0.188466)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 10.1161
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79012, 0.543712, 8.50907)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 10.1161
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.136829, 0.543712, 6.8867)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 10.1161
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038312, 0.543712, 10.8254)
+light_energy = 2.0
+shadow_enabled = true
+omni_range = 10.1161
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.7529, 0.280716, 20.5231)
+spot_range = 7.55067
+spot_angle = 63.7087
+
+[node name="Cameras" type="Node" parent="."]
+script = ExtResource("6_2yeep")
+
+[node name="ControlCam" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 7.29862, -0.274079, -2.11971)
+current = true
+
+[node name="WaterCam" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-0.755007, 0.140805, -0.64042, -6.27392e-09, 0.976672, 0.214735, 0.655716, 0.162127, -0.737395, -15.036, -0.082, 4.3553)
+
+[node name="GeneratorCam" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.118404, 0.213225, -0.969802, 0, 0.976672, 0.214735, 0.992966, -0.0254255, 0.115642, -5.51258, -0.458, 9.841)
+
+[node name="OxygenCam" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-0.677531, -0.157937, 0.718337, -1.84954e-09, 0.976672, 0.214735, -0.735494, 0.14549, -0.661726, 12.449, -0.458, 5.07198)
+
+[node name="KitchenCam" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-0.677531, -0.157937, 0.718337, -1.84954e-09, 0.976672, 0.214735, -0.735494, 0.14549, -0.661726, 12.912, -0.458, 15.3)
+
+[node name="MainCam" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.594823, 0.516709, -0.61579, 0, 0.766044, 0.642788, 0.803857, -0.382345, 0.455661, -6.439, 1.622, 24.093)
+
+[node name="PondCam" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.594823, 0.337179, -0.729723, 0, 0.907777, 0.419452, 0.803857, -0.2495, 0.539967, -14.604, -0.798, 23.535)
+
+[node name="ShitterCam" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-4.37114e-08, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 2.18557e-08, -3.78552e-08, -15.006, -0.063, 30.771)
+
+[node name="BedCam" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.955793, 0.0889089, -0.280277, 0, 0.953191, 0.30237, 0.29404, -0.289003, 0.911053, -6.091, -1.148, 35.491)
+
+[node name="PlantCam" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-0.955793, 0.0889089, -0.280276, 0, 0.953191, 0.30237, 0.29404, 0.289003, -0.911053, 4.024, 0.207, 27.388)
+
+[node name="Water 1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5724, -2.81879, 20.0785)
+mesh = SubResource("PlaneMesh_k1oqt")
+
+[node name="Water 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7077, -2.62491, 8.761)
+mesh = SubResource("PlaneMesh_pl21t")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+light_data = ExtResource("4_thi2i")
+
+[node name="ship" parent="." instance=ExtResource("4_iqqta")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(5.135, 0, 0, 0, 5.135, 0, 0, 0, 5.135, 9.19177, -0.594524, 33.7652)
+texture_filter = 0
+texture = ExtResource("5_m7f5r")
+
+[connection signal="pressed" from="UI/Button" to="Cameras" method="_on_button_pressed"]
+[connection signal="pressed" from="UI/Button2" to="Cameras" method="_on_button_2_pressed"]
+[connection signal="pressed" from="UI/Button3" to="Cameras" method="_on_button_3_pressed"]
+[connection signal="pressed" from="UI/Button4" to="Cameras" method="_on_button_4_pressed"]
+[connection signal="pressed" from="UI/Button5" to="Cameras" method="_on_button_5_pressed"]
+[connection signal="pressed" from="UI/Button6" to="Cameras" method="_on_button_6_pressed"]
+[connection signal="pressed" from="UI/Button7" to="Cameras" method="_on_button_7_pressed"]
+[connection signal="pressed" from="UI/Button8" to="Cameras" method="_on_button_8_pressed"]
+[connection signal="pressed" from="UI/Button9" to="Cameras" method="_on_button_9_pressed"]
+[connection signal="pressed" from="UI/Button10" to="Cameras" method="_on_button_10_pressed"]

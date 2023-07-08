@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vs73n7u46kro"
-path="res://.godot/imported/shitty_carpet.png-8171998034e5ef1854abb5440e222c9a.ctex"
+uid="uid://djoism40fdgcs"
+path="res://.godot/imported/StellerEdge.png-1be9c6af91b8caeadf068a4a202c3e09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/shitty_carpet.png"
-dest_files=["res://.godot/imported/shitty_carpet.png-8171998034e5ef1854abb5440e222c9a.ctex"]
+source_file="res://textures/StellerEdge.png"
+dest_files=["res://.godot/imported/StellerEdge.png-1be9c6af91b8caeadf068a4a202c3e09.ctex"]
 
 [params]
 

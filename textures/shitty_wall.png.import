@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkrr7d4pw8vn4"
-path.s3tc="res://.godot/imported/shitty_wall.png-d625b3e45b6a38e6edc2175b4e0afaeb.s3tc.ctex"
+path="res://.godot/imported/shitty_wall.png-d625b3e45b6a38e6edc2175b4e0afaeb.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/shitty_wall.png"
-dest_files=["res://.godot/imported/shitty_wall.png-d625b3e45b6a38e6edc2175b4e0afaeb.s3tc.ctex"]
+dest_files=["res://.godot/imported/shitty_wall.png-d625b3e45b6a38e6edc2175b4e0afaeb.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
