@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cr0u0jxflsky5"]
+[gd_scene load_steps=47 format=3 uid="uid://cr0u0jxflsky5"]
 
 [ext_resource type="Texture2D" uid="uid://bjujjt80eq4d0" path="res://textures/map.png" id="1_refm8"]
 [ext_resource type="PackedScene" uid="uid://ov4k80i1qwr3" path="res://scenes/ship.tscn" id="4_iqqta"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://chu6eh2vr8tb3" path="res://textures/Garden_floor.png" id="10_3xfsy"]
 [ext_resource type="Texture2D" uid="uid://u118r01fl6q5" path="res://Crew sprites/Botany1.png" id="10_s721i"]
 [ext_resource type="Texture2D" uid="uid://dur87to6u6k86" path="res://Crew sprites/Botany2.png" id="11_4ny4v"]
+[ext_resource type="Texture2D" uid="uid://bsrot0mbmphvx" path="res://textures/garden_box.png" id="11_77xlh"]
 [ext_resource type="Texture2D" uid="uid://c3kqcl4s5rpb0" path="res://Crew sprites/Cyrus_Janitor.png" id="12_khwmr"]
 [ext_resource type="Texture2D" uid="uid://bi7i6moth16f0" path="res://Crew sprites/Doctorsprite.png" id="13_em7m4"]
 [ext_resource type="Texture2D" uid="uid://dbtaglrcwgauf" path="res://Crew sprites/Fishermansprite.png" id="14_tk0gl"]
@@ -113,6 +114,16 @@ texture_filter = 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_l1lsh"]
 material = SubResource("StandardMaterial3D_scfm0")
 size = Vector2(11, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ujon"]
+albedo_texture = ExtResource("11_77xlh")
+uv1_scale = Vector3(0.5, 0.99, -0.5)
+uv1_offset = Vector3(0, 0.515, 0)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_eda64"]
+material = SubResource("StandardMaterial3D_7ujon")
 
 [node name="World" type="Node3D"]
 
@@ -276,6 +287,11 @@ texture_filter = 0
 [node name="GardenWall" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.16313, -2.45795, 31.0104)
 mesh = SubResource("PlaneMesh_l1lsh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(3.18815, 0, 0, 0, 0.920627, 0, 0, 0, 3.00078, 7.62886, -1.822, 31.6438)
+mesh = SubResource("BoxMesh_eda64")
+metadata/_edit_group_ = true
 
 [node name="Lights" type="Node" parent="."]
 
