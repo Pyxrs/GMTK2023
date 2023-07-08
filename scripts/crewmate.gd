@@ -76,7 +76,6 @@ func _on_action_tick_timeout():
 	start_action()
 
 func _on_idle_tick_timeout():
-	print("cheese")
 	if action == Actions.WORK and (navigation_agent.is_navigation_finished() or !navigation_agent.is_target_reachable()):
 		$IdleTick.wait_time = randf() * 5
 		pathfind_to(Vector3(position.x + randf_range(-2, 2), position.y, position.z + randf_range(-2, 2)))
@@ -149,7 +148,7 @@ func sort_weights(a, b):
 
 # Thoughts
 func _on_navigation_agent_3d_navigation_finished():
-	if randf() < 1.0:
+	if randf() < 0.3:
 		$ThoughtTimer.start()
 		$AnimatedSprite3D.show()
 		if action == Actions.EAT:
