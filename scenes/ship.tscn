@@ -2,15 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bwvjhlxlv7xij" path="res://models/shippington/ship.glb" id="1_ic0iq"]
 [ext_resource type="Material" uid="uid://c7or2p3tyf106" path="res://materials/carpet.tres" id="2_c6d07"]
+[ext_resource type="Material" uid="uid://cwsp70juogdxl" path="res://materials/wall.tres" id="2_swlpk"]
 [ext_resource type="Texture2D" uid="uid://bo2wx1ydspts2" path="res://textures/tiles.png" id="4_3lccu"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scc3l"]
-albedo_color = Color(0.6, 0.760784, 1, 1)
+[ext_resource type="Material" uid="uid://1d87dgc28ao1" path="res://materials/walls.tres" id="4_mr7sw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pkmr"]
 albedo_color = Color(0, 0.580392, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c1srp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvhcn"]
 albedo_texture = ExtResource("4_3lccu")
@@ -22,8 +19,8 @@ texture_filter = 0
 [node name="ship" instance=ExtResource("1_ic0iq")]
 
 [node name="Cylinder" parent="." index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_scc3l")
+surface_material_override/0 = ExtResource("2_swlpk")
 surface_material_override/1 = ExtResource("2_c6d07")
 surface_material_override/2 = SubResource("StandardMaterial3D_0pkmr")
-surface_material_override/3 = SubResource("StandardMaterial3D_c1srp")
+surface_material_override/3 = ExtResource("4_mr7sw")
 surface_material_override/4 = SubResource("StandardMaterial3D_xvhcn")
