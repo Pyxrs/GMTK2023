@@ -1,6 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cwsp70juogdxl"]
 
-[ext_resource type="Texture2D" uid="uid://bkrr7d4pw8vn4" path="res://textures/shitty_wall.png" id="1_jgdmw"]
+[ext_resource type="Texture2D" uid="uid://c2eqqy0rf7dt1" path="res://textures/metal_wall.png" id="1_t52r8"]
 
 [resource]
-albedo_texture = ExtResource("1_jgdmw")
+albedo_texture = ExtResource("1_t52r8")
+uv1_scale = Vector3(0.15, 0.3, 0.3)
+uv1_offset = Vector3(0, 0.365, 0)
+uv1_triplanar = true
+texture_filter = 0

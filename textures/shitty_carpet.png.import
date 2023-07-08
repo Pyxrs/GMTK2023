@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vs73n7u46kro"
-path.s3tc="res://.godot/imported/shitty_carpet.png-8171998034e5ef1854abb5440e222c9a.s3tc.ctex"
+path="res://.godot/imported/shitty_carpet.png-8171998034e5ef1854abb5440e222c9a.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/shitty_carpet.png"
-dest_files=["res://.godot/imported/shitty_carpet.png-8171998034e5ef1854abb5440e222c9a.s3tc.ctex"]
+dest_files=["res://.godot/imported/shitty_carpet.png-8171998034e5ef1854abb5440e222c9a.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3ycp7hpdagji"]
+
+[ext_resource type="Script" path="res://scripts/crewmate.gd" id="1_54jn4"]
+[ext_resource type="Texture2D" uid="uid://bl7nukkoa3oqv" path="res://textures/test_npc.png" id="2_x0tub"]
+
+[node name="Crewmate" type="Node3D"]
+script = ExtResource("1_54jn4")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+pixel_size = 0.05
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_x0tub")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+radius = 0.3
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

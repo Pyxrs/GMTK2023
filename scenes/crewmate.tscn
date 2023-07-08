@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=3 uid="uid://b3ycp7hpdagji"]
+
+[ext_resource type="Texture2D" uid="uid://u118r01fl6q5" path="res://Crew sprites/Botany1.png" id="1_g4ev4"]
+[ext_resource type="Script" path="res://scripts/crewmate.gd" id="1_jctd1"]
+[ext_resource type="Texture2D" uid="uid://bhwkaaxkb5tqt" path="res://textures/thoughts.png" id="3_luve1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ixuo"]
+atlas = ExtResource("3_luve1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyi44"]
+atlas = ExtResource("3_luve1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcywk"]
+atlas = ExtResource("3_luve1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbeap"]
+atlas = ExtResource("3_luve1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmd3l"]
+atlas = ExtResource("3_luve1")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1o8f"]
+atlas = ExtResource("3_luve1")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtsc2"]
+atlas = ExtResource("3_luve1")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdh2o"]
+atlas = ExtResource("3_luve1")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_go5s4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ixuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyi44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcywk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbeap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmd3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1o8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtsc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdh2o")
+}],
+"loop": true,
+"name": &"thought",
+"speed": 5.0
+}]
+
+[node name="Crewmate" type="Node3D"]
+script = ExtResource("1_jctd1")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+cast_shadow = 0
+pixel_size = 0.05
+billboard = 2
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("1_g4ev4")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+cast_shadow = 0
+pixel_size = 0.05
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_go5s4")
+animation = &"thought"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+radius = 0.4
+
+[node name="ActionTick" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="IdleTick" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="ThoughtTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
+[connection signal="timeout" from="ActionTick" to="." method="_on_action_tick_timeout"]
+[connection signal="timeout" from="IdleTick" to="." method="_on_idle_tick_timeout"]
+[connection signal="timeout" from="ThoughtTimer" to="." method="_on_thought_timer_timeout"]
