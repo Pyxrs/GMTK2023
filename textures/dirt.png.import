@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccjiiv7761a85"
-path="res://.godot/imported/Mushroom_blue.png-e80677644c37b897a67b9e49f9479087.ctex"
+uid="uid://b7pcs71ewq116"
+path.s3tc="res://.godot/imported/dirt.png-8f3447f5703c4d1ffe16a06c7c96ba03.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://textures/Mushroom_blue.png"
-dest_files=["res://.godot/imported/Mushroom_blue.png-e80677644c37b897a67b9e49f9479087.ctex"]
+source_file="res://textures/dirt.png"
+dest_files=["res://.godot/imported/dirt.png-8f3447f5703c4d1ffe16a06c7c96ba03.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cr0u0jxflsky5"]
+[gd_scene load_steps=51 format=3 uid="uid://cr0u0jxflsky5"]
 
 [ext_resource type="Texture2D" uid="uid://bjujjt80eq4d0" path="res://textures/map.png" id="1_refm8"]
 [ext_resource type="PackedScene" uid="uid://ov4k80i1qwr3" path="res://scenes/ship.tscn" id="4_iqqta"]
@@ -14,11 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://p0atae6htjno" path="res://scenes/work_position.tscn" id="8_ue6o1"]
 [ext_resource type="Texture2D" uid="uid://bqkfk2qqfc3s8" path="res://textures/vine1.png" id="9_rdsx7"]
 [ext_resource type="Texture2D" uid="uid://chu6eh2vr8tb3" path="res://textures/Garden_floor.png" id="10_3xfsy"]
+[ext_resource type="Texture2D" uid="uid://ccjiiv7761a85" path="res://textures/Mushroom_blue.png" id="10_24jlr"]
 [ext_resource type="Texture2D" uid="uid://u118r01fl6q5" path="res://Crew sprites/Botany1.png" id="10_s721i"]
 [ext_resource type="Texture2D" uid="uid://dur87to6u6k86" path="res://Crew sprites/Botany2.png" id="11_4ny4v"]
-[ext_resource type="Material" uid="uid://bmohqx75b7ci6" path="res://materials/box.tres" id="11_sb7uv"]
+[ext_resource type="Material" uid="uid://b8kr2klceerur" path="res://materials/box.tres" id="11_sb7uv"]
+[ext_resource type="Texture2D" uid="uid://chcse7kp8k804" path="res://textures/metal_wall_a - Copy.png" id="12_4aqwl"]
 [ext_resource type="Texture2D" uid="uid://c3kqcl4s5rpb0" path="res://Crew sprites/Cyrus_Janitor.png" id="12_khwmr"]
 [ext_resource type="Texture2D" uid="uid://bi7i6moth16f0" path="res://Crew sprites/Doctorsprite.png" id="13_em7m4"]
+[ext_resource type="Texture2D" uid="uid://b7pcs71ewq116" path="res://textures/dirt.png" id="14_4b6uw"]
 [ext_resource type="Texture2D" uid="uid://dbtaglrcwgauf" path="res://Crew sprites/Fishermansprite.png" id="14_tk0gl"]
 [ext_resource type="Texture2D" uid="uid://dbu5i00agllw8" path="res://Crew sprites/Lunchlady.png" id="15_e74qc"]
 [ext_resource type="Texture2D" uid="uid://ciwfycmhtt3j5" path="res://Crew sprites/Mechanic1.png" id="16_lompt"]
@@ -30,7 +33,6 @@
 [ext_resource type="Texture2D" uid="uid://cke8e4c2a8k0g" path="res://Crew sprites/rez2sprite_happy.png" id="22_ey7of"]
 [ext_resource type="Texture2D" uid="uid://dtokqx6e42hpb" path="res://Crew sprites/rez3sprite.png" id="23_i0wtr"]
 [ext_resource type="Texture2D" uid="uid://d0t3fy74b75va" path="res://Crew sprites/xaiver_poopman.png" id="24_g0clw"]
-[ext_resource type="ArrayMesh" uid="uid://dmfu3cldd0ci6" path="res://models/pot/Pot.obj" id="28_fbl8v"]
 
 [sub_resource type="Environment" id="Environment_pksq8"]
 ambient_light_source = 1
@@ -114,6 +116,20 @@ texture_filter = 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_l1lsh"]
 material = SubResource("StandardMaterial3D_scfm0")
 size = Vector2(11, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jgyb"]
+albedo_texture = ExtResource("12_4aqwl")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_re5db"]
+material = SubResource("StandardMaterial3D_6jgyb")
+size = Vector2(11, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwkuq"]
+albedo_texture = ExtResource("14_4b6uw")
+metallic_specular = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5624k"]
 
 [node name="World" type="Node3D"]
 
@@ -251,7 +267,7 @@ texture_filter = 0
 texture = ExtResource("7_xf3b4")
 
 [node name="Sprite3D2" type="Sprite3D" parent="Props"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23787, -1.43894, 34.0297)
+transform = Transform3D(-0.85971, 0, -0.510783, 0, 1, 0, 0.510783, 0, -0.85971, 7.13181, -1.43894, 32.0945)
 pixel_size = 0.05
 texture_filter = 0
 texture = ExtResource("8_kyk0m")
@@ -263,8 +279,10 @@ texture_filter = 0
 texture = ExtResource("9_rdsx7")
 
 [node name="Sprite3D6" type="Sprite3D" parent="Props"]
+transform = Transform3D(0.366422, 0, 0, 0, 0.366422, 0, 0, 0, 0.366422, 3.45603, -2.08494, 34.9534)
 pixel_size = 0.05
 texture_filter = 0
+texture = ExtResource("10_24jlr")
 
 [node name="Sprite3D5" type="Sprite3D" parent="Props"]
 pixel_size = 0.05
@@ -278,6 +296,18 @@ texture_filter = 0
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.16313, -2.45795, 31.0104)
 mesh = SubResource("PlaneMesh_l1lsh")
 
+[node name="GardenWall2" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(-0.966939, -1.95867e-07, 1.77458e-15, 0, -9.79335e-08, -0.464383, 8.45325e-08, -2.24046, 2.02988e-08, 7.16313, -0.0285451, 35.9004)
+mesh = SubResource("PlaneMesh_re5db")
+
+[node name="GardenWall3" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1.15306e-08, 0.485137, -2.02988e-08, 0, -2.1206e-08, -0.464383, -0.966939, 5.7852e-09, -2.42061e-16, 1.98582, -0.0285451, 32.1233)
+mesh = SubResource("PlaneMesh_re5db")
+
+[node name="GardenWall4" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(-4.22663e-08, -2.24046, 2.02988e-08, 0, -9.79335e-08, -0.464383, 0.966939, -9.79335e-08, 8.87289e-16, 12.5136, -0.0285451, 32.3058)
+mesh = SubResource("PlaneMesh_re5db")
+
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62886, -2.15069, 31.6438)
 
@@ -289,6 +319,12 @@ material = ExtResource("11_sb7uv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.557736, 0)
 operation = 2
 size = Vector3(2.5, 1, 2)
+material = ExtResource("11_sb7uv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Props"]
+transform = Transform3D(1.27351, 0, 0, 0, 0.94, 0, 0, 0, 1.03751, 7.68999, -1.81697, 31.662)
+material_override = SubResource("StandardMaterial3D_jwkuq")
+mesh = SubResource("PlaneMesh_5624k")
 
 [node name="Lights" type="Node" parent="."]
 
@@ -300,7 +336,7 @@ omni_range = 15.5104
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25056, 1.68696, 31.24)
-light_energy = 8.0
+light_energy = 0.566
 shadow_enabled = true
 omni_range = 9.18712
 
@@ -389,7 +425,7 @@ transform = Transform3D(-4.37114e-08, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 2.185
 transform = Transform3D(0.955793, 0.0889089, -0.280277, 0, 0.953191, 0.30237, 0.29404, -0.289003, 0.911053, -6.091, -1.148, 35.491)
 
 [node name="PlantCam" type="Camera3D" parent="Cameras"]
-transform = Transform3D(-0.955793, 0.0889089, -0.280276, 0, 0.953191, 0.30237, 0.29404, 0.289003, -0.911053, 4.024, 0.207, 27.388)
+transform = Transform3D(-0.955793, 0.0889088, -0.280276, 0, 0.953191, 0.30237, 0.29404, 0.289003, -0.911053, 4.024, 0.207, 27.388)
 
 [node name="WorkPositions" type="Node" parent="."]
 script = ExtResource("7_dtvrk")
@@ -502,10 +538,6 @@ sprite = ExtResource("23_i0wtr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97, -2.502, -0.768)
 person = 9
 sprite = ExtResource("24_g0clw")
-
-[node name="Pot" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.41149, 0, 0, 0, 3.41106, 0.0547166, 0, -0.0547166, 3.41106, 6.27875, -1.97923, 33.9616)
-mesh = ExtResource("28_fbl8v")
 
 [connection signal="pressed" from="UI/Button" to="Cameras" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Button2" to="Cameras" method="_on_button_2_pressed"]

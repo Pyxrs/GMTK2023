@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccjiiv7761a85"
-path="res://.godot/imported/Mushroom_blue.png-e80677644c37b897a67b9e49f9479087.ctex"
+uid="uid://chcse7kp8k804"
+path="res://.godot/imported/metal_wall_a - Copy.png-828019166b144e7851d653f064838c9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Mushroom_blue.png"
-dest_files=["res://.godot/imported/Mushroom_blue.png-e80677644c37b897a67b9e49f9479087.ctex"]
+source_file="res://textures/metal_wall_a - Copy.png"
+dest_files=["res://.godot/imported/metal_wall_a - Copy.png-828019166b144e7851d653f064838c9c.ctex"]
 
 [params]
 
