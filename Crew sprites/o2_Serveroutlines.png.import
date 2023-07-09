@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv1lqgeygwahm"
-path="res://.godot/imported/monitor.png-05373378383d3242867e398d28fbf9f3.ctex"
+uid="uid://ctk8sp8bthms"
+path="res://.godot/imported/o2_Serveroutlines.png-7036f7a9801ea519a378c10127a1c53d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Crew sprites/monitor.png"
-dest_files=["res://.godot/imported/monitor.png-05373378383d3242867e398d28fbf9f3.ctex"]
+source_file="res://Crew sprites/o2_Serveroutlines.png"
+dest_files=["res://.godot/imported/o2_Serveroutlines.png-7036f7a9801ea519a378c10127a1c53d.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
