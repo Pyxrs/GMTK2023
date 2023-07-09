@@ -1,0 +1,114 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpkdtnhv6eh17"]
+
+[ext_resource type="FontFile" uid="uid://x3v7bdenwaai" path="res://Orbitron-Regular.ttf" id="1_0wwsb"]
+[ext_resource type="Script" path="res://scripts/credditions.gd" id="2_71opf"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 411.0
+offset_right = 1152.0
+offset_bottom = 1587.0
+theme_override_fonts/font = ExtResource("1_0wwsb")
+theme_override_font_sizes/font_size = 64
+text = "Credits
+
+
+
+
+
+
+Models
+
+
+
+
+
+
+
+
+
+Sounds"
+horizontal_alignment = 1
+script = ExtResource("2_71opf")
+
+[node name="Label" type="Label" parent="Label"]
+offset_left = 34.0
+offset_top = 88.0
+offset_right = 3366.0
+offset_bottom = 2194.0
+theme_override_fonts/font = ExtResource("1_0wwsb")
+theme_override_font_sizes/font_size = 30
+text = "                                                Executive Producer: Magooraxis
+                                                Artist: EDog
+                                                Developer: Pyxrs
+                                                Musician: Pyxrs
+
+
+
+
+
+
+
+
+
+
+
+Flat Screen TV by Alex Safayan [CC-BY]
+(https://creativecommons.org/licenses/by/3.0/)
+via Poly Pizza (https://poly.pizza/m/cQ6pt8VHR7G)
+
+Water Cooler by J-Toastie [CC-BY]
+(https://creativecommons.org/licenses/by/3.0/)
+via Poly Pizza (https://poly.pizza/m/zWi9p5FSxD)
+
+Mop & Bucket by J-Toastie [CC-BY]
+(https://creativecommons.org/licenses/by/3.0/)
+via Poly Pizza (https://poly.pizza/m/kWobe0q7tf)
+
+Fish Tank by J-Toastie [CC-BY]
+(https://creativecommons.org/licenses/by/3.0/)
+via Poly Pizza (https://poly.pizza/m/FLnlsLbY2s)
+
+
+
+
+
+https://freesound.org/people/BabelFishTank/sounds/535945/
+https://creativecommons.org/licenses/by/4.0/
+
+https://freesound.org/people/markkuyp/sounds/345529/
+https://creativecommons.org/licenses/by/4.0/
+
+https://freesound.org/people/20020/sounds/76075/
+http://creativecommons.org/licenses/by/3.0/
+
+https://freesound.org/people/passAirmangrace/sounds/340893/
+http://creativecommons.org/licenses/by/3.0/
+
+https://freesound.org/people/InspectorJ/sounds/402628/
+https://creativecommons.org/licenses/by/4.0/
+
+https://freesound.org/people/InspectorJ/sounds/339324/
+https://creativecommons.org/licenses/by/4.0/
+
+https://freesound.org/people/InspectorJ/sounds/403180/
+https://creativecommons.org/licenses/by/4.0/
+
+https://freesound.org/people/pfranzen/sounds/328013/
+https://creativecommons.org/licenses/by/4.0/
+
+Special thanks to Kanye East for the inspiration"
