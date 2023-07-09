@@ -1,5 +1,6 @@
-[gd_scene load_steps=88 format=3 uid="uid://cr0u0jxflsky5"]
+[gd_scene load_steps=122 format=3 uid="uid://cr0u0jxflsky5"]
 
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_5qkmx"]
 [ext_resource type="Texture2D" uid="uid://bjujjt80eq4d0" path="res://textures/map.png" id="1_refm8"]
 [ext_resource type="Texture2D" uid="uid://bekoo8wpijt0p" path="res://textures/viewcone.png" id="2_q1ssk"]
 [ext_resource type="FontFile" uid="uid://x3v7bdenwaai" path="res://Orbitron-Regular.ttf" id="2_sqn7j"]
@@ -10,24 +11,35 @@
 [ext_resource type="Shader" path="res://materials/water.gdshader" id="5_lkere"]
 [ext_resource type="Texture2D" uid="uid://cc3bv84o0fypv" path="res://textures/wall_vine1.png" id="5_m7f5r"]
 [ext_resource type="Script" path="res://scripts/camera_manager.gd" id="6_2yeep"]
+[ext_resource type="Texture2D" uid="uid://cdf3tmmewpe6f" path="res://textures/panel.png" id="6_32w5t"]
+[ext_resource type="Script" path="res://scripts/CrewFilesMenu.gd" id="7_c6uqf"]
 [ext_resource type="Script" path="res://scripts/work_positions.gd" id="7_dtvrk"]
 [ext_resource type="PackedScene" uid="uid://b3ycp7hpdagji" path="res://scenes/crewmate.tscn" id="7_kfv73"]
 [ext_resource type="Texture2D" uid="uid://brr5syxi8auhk" path="res://textures/vine3.png" id="7_xf3b4"]
 [ext_resource type="Texture2D" uid="uid://dppnmxp1xnwot" path="res://textures/vine5.png" id="8_777ny"]
+[ext_resource type="Texture2D" uid="uid://ck3vufs1ddj4q" path="res://Crew sprites/Music_togle_on.png" id="8_c0yic"]
 [ext_resource type="Texture2D" uid="uid://dmvmtkxsgwhcl" path="res://textures/baby_mario_lawsuit.png" id="8_kyk0m"]
+[ext_resource type="Texture2D" uid="uid://dlliqqrmrjt5p" path="res://textures/x.png" id="8_rqsrx"]
 [ext_resource type="PackedScene" uid="uid://p0atae6htjno" path="res://scenes/work_position.tscn" id="8_ue6o1"]
+[ext_resource type="Script" path="res://scripts/Close.gd" id="9_0rsy2"]
+[ext_resource type="Script" path="res://scripts/musictoggle.gd" id="9_jdj26"]
 [ext_resource type="Texture2D" uid="uid://bqkfk2qqfc3s8" path="res://textures/vine1.png" id="9_rdsx7"]
 [ext_resource type="Texture2D" uid="uid://chu6eh2vr8tb3" path="res://textures/Garden_floor.png" id="10_3xfsy"]
 [ext_resource type="Texture2D" uid="uid://ccjiiv7761a85" path="res://textures/Mushroom_blue.png" id="10_24jlr"]
 [ext_resource type="Texture2D" uid="uid://u118r01fl6q5" path="res://Crew sprites/Botany1.png" id="10_s721i"]
+[ext_resource type="Script" path="res://scripts/RequestPersonMenu.gd" id="10_vuh14"]
 [ext_resource type="Texture2D" uid="uid://dur87to6u6k86" path="res://Crew sprites/Botany2.png" id="11_4ny4v"]
+[ext_resource type="Script" path="res://scripts/door_controls.gd" id="11_nmxpr"]
 [ext_resource type="Material" uid="uid://b8kr2klceerur" path="res://materials/box.tres" id="11_sb7uv"]
 [ext_resource type="Texture2D" uid="uid://chcse7kp8k804" path="res://textures/metal_wall_a - Copy.png" id="12_4aqwl"]
+[ext_resource type="Script" path="res://scripts/oxygen_management.gd" id="12_br86f"]
 [ext_resource type="Texture2D" uid="uid://c3kqcl4s5rpb0" path="res://Crew sprites/Cyrus_Janitor.png" id="12_khwmr"]
 [ext_resource type="Texture2D" uid="uid://dnib0gj4e17r5" path="res://textures/Sapling.png" id="13_akygu"]
+[ext_resource type="Script" path="res://scripts/plumbing.gd" id="13_bo66o"]
 [ext_resource type="Texture2D" uid="uid://bi7i6moth16f0" path="res://Crew sprites/Doctorsprite.png" id="13_em7m4"]
 [ext_resource type="Texture2D" uid="uid://b7pcs71ewq116" path="res://textures/dirt.png" id="14_4b6uw"]
 [ext_resource type="Texture2D" uid="uid://dbtaglrcwgauf" path="res://Crew sprites/Fishermansprite.png" id="14_tk0gl"]
+[ext_resource type="Script" path="res://scripts/reactor_controls.gd" id="14_u8dfb"]
 [ext_resource type="Texture2D" uid="uid://dbu5i00agllw8" path="res://Crew sprites/Lunchlady.png" id="15_e74qc"]
 [ext_resource type="Shader" path="res://materials/window.gdshader" id="16_eb13p"]
 [ext_resource type="Texture2D" uid="uid://ciwfycmhtt3j5" path="res://Crew sprites/Mechanic1.png" id="16_lompt"]
@@ -45,6 +57,8 @@
 [ext_resource type="ArrayMesh" uid="uid://byyaft7j80aut" path="res://models/cooler/WaterCooler.obj" id="24_dtkno"]
 [ext_resource type="Texture2D" uid="uid://d0t3fy74b75va" path="res://Crew sprites/xaiver_poopman.png" id="24_g0clw"]
 [ext_resource type="ArrayMesh" uid="uid://dgft4aamfm53q" path="res://models/fridge/kitchenFridgeLarge.obj" id="25_fpbst"]
+[ext_resource type="Texture2D" uid="uid://bq06c12bm7vpj" path="res://textures/mario_lawsuit.png" id="26_sy5ug"]
+[ext_resource type="Script" path="res://scripts/itsamemario.gd" id="27_g0gw4"]
 [ext_resource type="Texture2D" uid="uid://758xtg4tcodl" path="res://textures/bedington.png" id="28_o0iv2"]
 [ext_resource type="Texture2D" uid="uid://wktk4ru3uold" path="res://textures/shit_stain.png" id="29_pc04x"]
 [ext_resource type="Texture2D" uid="uid://dqlcgjsf1rxwv" path="res://Crew sprites/Andrewhead.png" id="29_uxgq1"]
@@ -63,6 +77,8 @@
 [ext_resource type="AudioStream" uid="uid://dl1cadrd33wdb" path="res://sound/effects/generator.mp3" id="61_b7vrk"]
 [ext_resource type="AudioStream" uid="uid://cb32y1sxc3e8k" path="res://sound/effects/snore.wav" id="62_irjtn"]
 [ext_resource type="AudioStream" uid="uid://cblp8tgreo3li" path="res://sound/effects/water.wav" id="63_fg5ri"]
+[ext_resource type="Script" path="res://scripts/room_area.gd" id="65_ggu4t"]
+[ext_resource type="Texture2D" uid="uid://blp2wjxfw7178" path="res://textures/door.png" id="75_hyrar"]
 
 [sub_resource type="Environment" id="Environment_pksq8"]
 ambient_light_source = 1
@@ -75,6 +91,22 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uxihe"]
+line_spacing = -5.35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3ais"]
+bg_color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vstnf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_btq87"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jlhul"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m6khp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgtr2"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_rg6js"]
 vertices = PackedVector3Array(-5.21857, -2.37657, 3.1, -3.31857, -2.37657, 3.1, -3.31857, -2.37657, 2.4, -5.21857, -2.37657, 2.4, -3.01857, -2.37657, 2.1, -2.41857, -2.37657, 2.1, -2.51857, -2.37657, -2, -5.51857, -2.37657, 2.1, -5.21857, -2.37657, 2.4, -3.31857, -2.37657, 2.4, -3.01857, -2.37657, 2.1, -2.51857, -2.37657, -2, -7.01857, -2.37657, -2, -7.01857, -2.37657, -2, -7.01857, -2.37657, 2.1, -5.51857, -2.37657, 2.1, -2.41857, -2.37657, 2.1, 2.38143, -2.37657, 2.1, 2.48143, -2.37657, -2, -2.51857, -2.37657, -2, 3.28143, -2.37657, 2.4, 3.28143, -2.37657, 3.1, 5.18143, -2.37657, 3.1, 5.18143, -2.37657, 2.4, 2.48143, -2.37657, -2, 2.38143, -2.37657, 2.1, 2.98143, -2.37657, 2.1, 2.98143, -2.37657, 2.1, 3.28143, -2.37657, 2.4, 5.18143, -2.37657, 2.4, 5.48143, -2.37657, 2.1, 7.08143, -2.37657, -2, 2.48143, -2.37657, -2, 5.48143, -2.37657, 2.1, 7.08143, -2.37657, 2.1, 7.08143, -2.37657, -2, -3.31857, -2.37657, 6.9, -3.31857, -2.37657, 3.1, -5.21857, -2.37657, 3.1, -5.21857, -2.37657, 7, 3.28143, -2.37657, 6.9, 5.18143, -2.37657, 7, 5.18143, -2.37657, 3.1, 3.28143, -2.37657, 3.1, -14.7186, -8.37657, 4.5, -14.7186, -8.37657, 13, -6.61857, -8.37657, 13, -6.61857, -8.37657, 4.5, 6.18143, -2.37657, 8, 6.18143, -2.37657, 9.6, 6.78143, -2.37657, 9.6, 6.78143, -2.37657, 8, 7.08143, -2.37657, 9.9, 7.08143, -2.37657, 12.1, 12.1814, -2.37657, 12.1, 7.08143, -2.37657, 7.7, 6.78143, -2.37657, 8, 6.78143, -2.37657, 9.6, 7.08143, -2.37657, 9.9, 12.1814, -2.37657, 12.1, 12.1814, -2.37657, 5.5, 12.1814, -2.37657, 5.5, 7.08143, -2.37657, 5.5, 7.08143, -2.37657, 7.7, -12.0186, -2.37657, 11.5, -11.4186, -2.37657, 11.6, -11.4186, -2.37657, 11.4, -12.3186, -2.37657, 10.9, -12.8186, -2.37657, 11, -11.7186, -2.37657, 6.3, -10.5186, -2.37657, 6.1, -10.8186, -2.37657, 5.8, -12.0186, -2.37657, 6.1, -11.7186, -2.37657, 6.3, -12.0186, -2.37657, 6.1, -12.8186, -2.37657, 6.6, -12.8186, -2.37657, 7.2, -9.61857, -2.37657, 6.3, -8.31857, -2.37657, 7.5, -8.01857, -2.37657, 7.5, -8.41857, -2.37657, 6.7, -8.91857, -2.37657, 6.3, -9.91857, -2.37657, 5.9, -12.8186, -2.37657, 7.2, -12.8186, -2.37657, 6.6, -13.7186, -2.37657, 8.1, -13.3186, -2.37657, 8.3, -13.7186, -2.37657, 9.5, -13.3186, -2.37657, 8.3, -13.7186, -2.37657, 8.1, -14.7186, -2.37657, 8.1, -14.7186, -2.37657, 9.5, -12.8186, -2.37657, 11, -12.3186, -2.37657, 10.9, -13.2186, -2.37657, 9.7, -13.7186, -2.37657, 9.5, -10.5186, -2.37657, 6.1, -9.61857, -2.37657, 6.3, -9.91857, -2.37657, 5.9, -10.8186, -2.37657, 5.8, -13.7186, -2.37657, 9.5, -13.2186, -2.37657, 9.7, -13.3186, -2.37657, 8.3, -1.21857, -2.67657, 7, -0.918573, -2.77657, 7.7, -0.618573, -2.77657, 7.4, -0.818574, -2.77657, 6.7, -1.21857, -2.67657, 7, -0.618573, -2.77657, 7.4, 0.581427, -2.77657, 7.4, 0.881426, -2.77657, 6.7, 1.48143, -2.57657, 9.1, 0.881426, -2.77657, 10, 1.08143, -2.67657, 10.6, 2.48143, -2.37657, 9.6, 1.28143, -2.67657, 8, 2.48143, -2.37657, 7.9, 0.881426, -2.77657, 6.7, 0.581427, -2.77657, 7.4, 1.48143, -2.57657, 9.1, 2.48143, -2.37657, 9.6, 2.98143, -2.37657, 9.6, 2.98143, -2.37657, 7.9, 2.48143, -2.37657, 7.9, 1.28143, -2.67657, 8, -5.21857, -2.37657, 7.7, -5.61857, -2.37657, 8, -5.61857, -2.37657, 9.6, -3.31857, -2.37657, 7.6, -3.31857, -2.37657, 6.9, -5.21857, -2.37657, 7, -5.21857, -2.37657, 7.7, -5.21857, -2.37657, 7.7, -5.61857, -2.37657, 9.6, -5.21857, -2.37657, 9.9, -3.31857, -2.37657, 9.9, -3.01857, -2.37657, 7.9, -3.31857, -2.37657, 7.6, -3.31857, -2.37657, 9.9, -3.01857, -2.37657, 9.6, -3.01857, -2.37657, 7.9, -5.21857, -2.37657, 9.9, -5.21857, -2.37657, 10.6, -3.31857, -2.37657, 10.6, -3.31857, -2.37657, 9.9, 5.48143, -2.37657, 9.6, 6.18143, -2.37657, 9.6, 6.18143, -2.37657, 8, 5.48143, -2.37657, 8, 3.28143, -2.37657, 9.9, 3.28143, -2.37657, 10.6, 5.18143, -2.37657, 10.6, 5.18143, -2.37657, 9.9, 5.18143, -2.37657, 9.9, 5.48143, -2.37657, 9.6, 5.48143, -2.37657, 8, 5.18143, -2.37657, 7, 3.28143, -2.37657, 6.9, 3.28143, -2.37657, 7.6, 5.18143, -2.37657, 7.7, 5.18143, -2.37657, 9.9, 5.48143, -2.37657, 8, 5.18143, -2.37657, 7.7, 3.28143, -2.37657, 7.6, 2.98143, -2.37657, 7.9, 3.28143, -2.37657, 9.9, 2.98143, -2.37657, 7.9, 2.98143, -2.37657, 9.6, 3.28143, -2.37657, 9.9, 1.08143, -2.67657, 10.6, 0.881426, -2.77657, 10, 0.581427, -2.77657, 10.2, 0.881426, -2.77657, 10.8, 1.08143, -2.67657, 10.6, 0.581427, -2.77657, 10.2, -0.618573, -2.77657, 10.2, -0.818574, -2.77657, 10.8, -1.41857, -2.67657, 8.3, -0.918573, -2.77657, 7.7, -1.21857, -2.67657, 7, -2.51857, -2.37657, 7.9, -0.818574, -2.77657, 10.8, -0.618573, -2.77657, 10.2, -1.31857, -2.67657, 9.5, -2.51857, -2.37657, 9.6, -1.41857, -2.67657, 8.3, -2.51857, -2.37657, 7.9, -3.01857, -2.37657, 7.9, -3.01857, -2.37657, 9.6, -2.51857, -2.37657, 9.6, -1.31857, -2.67657, 9.5, -9.91857, -2.37657, 11.4, -9.91857, -2.37657, 11.6, -9.31857, -2.37657, 11.5, -8.51857, -2.37657, 11, -9.01857, -2.37657, 10.9, -8.01857, -2.37657, 8.3, -8.11857, -2.37657, 9.7, -7.61857, -2.37657, 9.7, -5.61857, -2.37657, 9.6, -5.61857, -2.37657, 8, -7.61857, -2.37657, 7.9, -8.11857, -2.37657, 9.7, -9.01857, -2.37657, 10.9, -8.51857, -2.37657, 11, -7.61857, -2.37657, 9.7, -8.01857, -2.37657, 7.5, -8.31857, -2.37657, 7.5, -8.01857, -2.37657, 8.3, -7.61857, -2.37657, 7.9, -0.618573, 1.52343, 8.5, -0.618573, 1.52343, 9.1, -0.418573, 1.52343, 9.4, 0.381426, 1.52343, 8.2, -0.418573, 1.52343, 8.2, -0.618573, 1.52343, 8.5, -0.418573, 1.52343, 9.4, 0.381426, 1.52343, 9.4, 0.681427, 1.52343, 8.9, -0.318574, -2.77657, 9.3, 0.281427, -2.77657, 9.3, 0.481426, -2.77657, 9.1, 0.281427, -2.77657, 8.3, -0.318574, -2.77657, 8.3, -0.518574, -2.77657, 8.6, 0.481426, -2.77657, 9.1, 0.481426, -2.77657, 8.5, 0.281427, -2.77657, 8.3, -5.21857, -2.37657, 14.5, -3.31857, -2.37657, 14.5, -3.31857, -2.37657, 10.6, -5.21857, -2.37657, 10.6, 3.28143, -2.37657, 14.5, 5.18143, -2.37657, 14.5, 5.18143, -2.37657, 10.6, 3.28143, -2.37657, 10.6, -11.0186, -2.37657, 12, -10.3186, -2.37657, 12, -9.91857, -2.37657, 11.6, -9.91857, -2.37657, 11.4, -11.4186, -2.37657, 11.4, -11.4186, -2.37657, 11.6, -10.0186, -2.37657, 17.1, -8.81857, -2.37657, 17.1, -8.61857, -2.37657, 16.4, -10.2186, -2.37657, 16.4, -8.81857, -2.37657, 17.1, -8.61857, -2.37657, 17.3, -8.61857, -2.37657, 16.4, -11.0186, -2.37657, 17.4, -11.0186, -2.37657, 18.1, -10.3186, -2.37657, 18.1, -10.3186, -2.37657, 17.4, -10.9186, -2.37657, 16.1, -10.2186, -2.37657, 16.4, -10.5186, -2.37657, 16.1, -11.2186, -2.37657, 17.2, -11.0186, -2.37657, 17.4, -10.3186, -2.37657, 17.4, -10.9186, -2.37657, 16.1, -11.2186, -2.37657, 16.4, -11.2186, -2.37657, 17.2, -10.3186, -2.37657, 17.4, -10.0186, -2.37657, 17.1, -10.2186, -2.37657, 16.4, -10.9186, -2.37657, 13.3, -10.9186, -2.37657, 16.1, -10.5186, -2.37657, 16.1, -10.5186, -2.37657, 13.3, -10.5186, -2.37657, 13.3, -10.3186, -2.37657, 13.2, -10.3186, -2.37657, 12, -11.0186, -2.37657, 12, -10.9186, -2.37657, 13.3, -6.51857, -2.37657, 19.1, -7.41857, -2.37657, 19.1, -7.41857, -2.37657, 20.9, -6.51857, -2.37657, 20.9, -3.01857, -2.37657, 15.5, -6.21857, -2.37657, 18.8, -6.21857, -2.37657, 21.2, -5.41857, -2.37657, 25.6, 2.48143, -2.37657, 25.6, 2.38143, -2.37657, 15.5, -3.31857, -2.37657, 15.2, -3.31857, -2.37657, 14.5, -5.21857, -2.37657, 14.5, -5.21857, -2.37657, 15.2, -5.51857, -2.37657, 15.5, -6.21857, -2.37657, 15.5, -6.21857, -2.37657, 18.8, -6.21857, -2.37657, 18.8, -6.51857, -2.37657, 19.1, -6.51857, -2.37657, 20.9, -6.21857, -2.37657, 21.2, -3.01857, -2.37657, 15.5, -3.31857, -2.37657, 15.2, -5.21857, -2.37657, 15.2, -5.51857, -2.37657, 15.5, -6.21857, -2.37657, 18.8, -6.21857, -2.37657, 21.2, -6.31857, -2.37657, 24.8, -5.41857, -2.37657, 25.6, 9.58143, -2.37657, 25.6, 9.58143, -2.37657, 25.5, 9.28143, -2.37657, 25.5, 2.48143, -2.37657, 25.6, 5.18143, -2.37657, 15.2, 5.18143, -2.37657, 14.5, 3.28143, -2.37657, 14.5, 3.28143, -2.37657, 15.2, 2.98143, -2.37657, 15.5, 2.38143, -2.37657, 15.5, 2.48143, -2.37657, 25.6, 5.48143, -2.37657, 15.5, 5.18143, -2.37657, 15.2, 3.28143, -2.37657, 15.2, 2.98143, -2.37657, 15.5, 2.48143, -2.37657, 25.6, 8.98143, -2.37657, 25.2, 8.98143, -2.37657, 25.2, 8.98143, -2.37657, 15.5, 5.48143, -2.37657, 15.5, 2.48143, -2.37657, 25.6, 9.28143, -2.37657, 25.5, 8.98143, -2.37657, 25.2, 10.2814, -2.37657, 22, 11.8814, -2.37657, 22, 11.8814, -2.37657, 15.5, 10.2814, -2.37657, 15.5, -7.71857, -2.37657, 16, -7.71857, -2.37657, 18.2, -7.11857, -2.37657, 18.2, -7.11857, -2.37657, 15.7, -14.1186, -2.37657, 17.1, -11.2186, -2.37657, 17.2, -11.2186, -2.37657, 16.4, -14.7186, -2.37657, 16.4, -14.7186, -2.37657, 22.2, -14.4186, -2.37657, 22.2, -14.4186, -2.37657, 17.4, -14.7186, -2.37657, 16.4, -14.4186, -2.37657, 17.4, -14.1186, -2.37657, 17.1, -14.7186, -2.37657, 16.4, -13.2186, -4.17657, 17.9, -13.2186, -4.17657, 22.1, -10.0186, -4.17657, 22.1, -10.0186, -4.17657, 17.9, -8.31857, -2.37657, 19.1, -8.51857, -2.37657, 18.8, -8.81857, -2.37657, 19, -8.81857, -2.37657, 21, -8.51857, -2.37657, 21.2, -8.31857, -2.37657, 20.9, -10.3186, -2.37657, 18.7, -10.3186, -2.37657, 18.1, -11.0186, -2.37657, 18.1, -10.0186, -2.37657, 19, -10.3186, -2.37657, 18.7, -11.0186, -2.37657, 18.1, -10.9186, -2.37657, 21.1, -8.31857, -2.37657, 19.1, -8.81857, -2.37657, 19, -10.0186, -2.37657, 19, -10.9186, -2.37657, 21.1, -8.81857, -2.37657, 21, -8.31857, -2.37657, 20.9, -7.41857, -2.37657, 20.9, -7.41857, -2.37657, 19.1, -8.31857, -2.37657, 19.1, -8.31857, -2.37657, 20.9, -7.71857, -2.37657, 23.8, -7.11857, -2.37657, 24, -7.11857, -2.37657, 21.8, -7.71857, -2.37657, 21.8, 9.98143, -2.37657, 25.5, 9.58143, -2.37657, 25.5, 9.58143, -2.37657, 25.6, 10.6814, -2.37657, 25.6, 11.8814, -2.37657, 22.8, 11.8814, -2.37657, 22, 10.2814, -2.37657, 22, 10.2814, -2.37657, 25.2, 9.98143, -2.37657, 25.5, 10.6814, -2.37657, 25.6, 10.9814, -2.37657, 25.9, 10.9814, -2.27657, 26.5, 12.0814, -2.27657, 26.5, 12.0814, -2.37657, 25.9, 12.3814, -2.37657, 25.6, 12.6814, -2.37657, 25.6, 12.6814, -2.37657, 23.3, 11.8814, -2.37657, 22.8, 10.2814, -2.37657, 22, 10.2814, -2.37657, 25.2, 10.6814, -2.37657, 25.6, 10.9814, -2.37657, 25.9, 12.0814, -2.37657, 25.9, 10.6814, -2.37657, 25.6, 12.0814, -2.37657, 25.9, 12.3814, -2.37657, 25.6, 10.2814, -2.37657, 25.2, -14.4186, -2.37657, 22.6, -14.4186, -2.37657, 22.2, -14.7186, -2.37657, 22.2, -14.7186, -2.37657, 23.6, -8.61857, -2.37657, 23.6, -8.61857, -2.37657, 22.7, -8.81857, -2.37657, 22.9, -8.61857, -2.37657, 23.6, -8.81857, -2.37657, 22.9, -14.1186, -2.37657, 22.9, -14.7186, -2.37657, 23.6, -14.1186, -2.37657, 22.9, -14.4186, -2.37657, 22.6, -14.7186, -2.37657, 23.6, -9.61857, -2.37657, 26.4, -9.61857, -2.37657, 27, -9.31857, -2.37657, 27, -9.61857, -2.37657, 26.4, -9.31857, -2.37657, 27, -9.01857, -2.37657, 27.3, -7.01857, -2.37657, 27.6, -7.01857, -2.37657, 27.2, -7.91857, -2.37657, 26.4, -6.71857, -2.37657, 27.9, -7.01857, -2.37657, 27.6, -9.01857, -2.37657, 27.3, -9.01857, -2.37657, 35.4, -7.01857, -2.37657, 27.2, -5.41857, -2.37657, 25.6, -6.31857, -2.37657, 24.8, -7.91857, -2.37657, 26.4, -0.818574, -2.37657, 35.4, -0.818574, -2.37657, 27.9, -6.71857, -2.37657, 27.9, -9.01857, -2.37657, 35.4, -10.0186, -2.37657, 27, -9.61857, -2.37657, 27, -9.61857, -2.37657, 26.4, -10.3186, -2.37657, 27.3, -10.0186, -2.37657, 27, -9.61857, -2.37657, 26.4, -14.5186, -2.37657, 26.4, -14.5186, -2.37657, 35.4, -10.3186, -2.37657, 35.4, -10.3186, -2.37657, 27.3, -14.5186, -2.37657, 26.4, 12.0814, -2.27657, 26.5, 10.9814, -2.27657, 26.5, 10.9814, -2.27657, 26.9, 12.0814, -2.27657, 26.5, 10.9814, -2.27657, 26.9, 10.6814, -2.27657, 27.2, 12.0814, -2.27657, 35.5, 10.6814, -2.27657, 27.2, 2.38143, -2.27657, 27.2, 2.38143, -2.27657, 35.5, 12.0814, -2.27657, 35.5)
@@ -310,7 +342,48 @@ shader_parameter/additional_scroll_speed = 0.05
 material = SubResource("ShaderMaterial_pkeiq")
 size = Vector2(10.67, 1.705)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u8xk7"]
+size = Vector3(16.0883, 4.53658, 5.7894)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8jr2b"]
+size = Vector3(6.55411, 4.53658, 8.35003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0o7b"]
+size = Vector3(9.98746, 6.38564, 10.937)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x32ix"]
+size = Vector3(7.74015, 4.26528, 8.86646)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qmjb"]
+size = Vector3(11.0479, 7.27987, 10.2199)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_651ye"]
+size = Vector3(9.66383, 3.50277, 10.2199)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83yhs"]
+albedo_texture = ExtResource("75_hyrar")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mdaj2"]
+material = SubResource("StandardMaterial3D_83yhs")
+size = Vector2(2.9, 2.9)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ft3od"]
+material = SubResource("StandardMaterial3D_83yhs")
+flip_faces = true
+size = Vector2(2.9, 2.9)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dyc7b"]
+material = SubResource("StandardMaterial3D_83yhs")
+size = Vector2(3.17, 2.9)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4cbww"]
+material = SubResource("StandardMaterial3D_83yhs")
+flip_faces = true
+size = Vector2(3.17, 2.9)
+
 [node name="World" type="Node3D"]
+script = ExtResource("1_5qkmx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.5, -2.18557e-08, 0, -4.37114e-08, 1, -0.5, 0.866025, 3.78552e-08, 0, 0, 0)
@@ -321,8 +394,8 @@ environment = SubResource("Environment_pksq8")
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="TextureRect" type="TextureRect" parent="UI"]
 layout_mode = 0
@@ -433,6 +506,612 @@ text = "Time to destination
 horizontal_alignment = 1
 script = ExtResource("3_ous3h")
 
+[node name="Label2" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 2.0
+offset_right = 356.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+text = "Click on the squares
+to switch cameras
+
+Right mouse to pan"
+label_settings = SubResource("LabelSettings_uxihe")
+
+[node name="TextureRect3" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 99.0
+offset_bottom = 516.0
+scale = Vector2(3, 3)
+texture = ExtResource("6_32w5t")
+
+[node name="CrewFilesMenu" type="Panel" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -198.0
+offset_right = 330.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w3ais")
+script = ExtResource("7_c6uqf")
+
+[node name="Label" type="Label" parent="UI/CrewFilesMenu"]
+layout_mode = 0
+offset_right = 660.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 36
+text = "Crew Files"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Crew" type="Label" parent="UI/CrewFilesMenu"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 120.0
+offset_right = 205.0
+offset_bottom = 439.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 17
+text = "Astrid (Botanist)
+Julianna (Botanist)
+Cyrus (Janitor)
+Tianna (Doctor)
+Darrel (Fisherman)
+Janet (Lunch Lady)
+Doreen (Mechanic)
+Gideon (Mechanic)
+"
+
+[node name="P1" type="Label" parent="UI/CrewFilesMenu"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 120.0
+offset_right = 280.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 17
+text = "0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0"
+
+[node name="P2" type="Label" parent="UI/CrewFilesMenu"]
+layout_mode = 0
+offset_left = 566.0
+offset_top = 120.0
+offset_right = 606.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 17
+text = "0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0"
+
+[node name="Crew3" type="Label" parent="UI/CrewFilesMenu"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 77.0
+offset_right = 183.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 25
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Crew4" type="Label" parent="UI/CrewFilesMenu"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 77.0
+offset_right = 342.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 25
+text = "Paranoia"
+horizontal_alignment = 1
+
+[node name="Crew5" type="Label" parent="UI/CrewFilesMenu"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 77.0
+offset_right = 506.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 25
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Crew6" type="Label" parent="UI/CrewFilesMenu"]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 77.0
+offset_right = 665.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 25
+text = "Paranoia"
+horizontal_alignment = 1
+
+[node name="Crew2" type="Label" parent="UI/CrewFilesMenu"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 117.0
+offset_right = 532.0
+offset_bottom = 437.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 17
+text = "Christi (Nurse)
+Ross (Nurse)
+Aaron (Pilot)
+Eddy (Resident)
+Madlyn (Resident)
+Zoldur (Resident)
+Xavier (Resident)"
+
+[node name="Close" type="TextureButton" parent="UI/CrewFilesMenu"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 9.99999
+offset_right = 610.0
+offset_bottom = 26.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("8_rqsrx")
+script = ExtResource("9_0rsy2")
+
+[node name="Timer" type="Timer" parent="UI/CrewFilesMenu"]
+wait_time = 2.0
+autostart = true
+
+[node name="CrewFiles" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 459.0
+offset_right = 90.0
+offset_bottom = 540.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vstnf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btq87")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jlhul")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m6khp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rgtr2")
+
+[node name="RequestPersonMenu" type="Panel" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -198.0
+offset_right = 330.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w3ais")
+script = ExtResource("10_vuh14")
+
+[node name="Close" type="TextureButton" parent="UI/RequestPersonMenu"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 9.99999
+offset_right = 610.0
+offset_bottom = 26.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("8_rqsrx")
+script = ExtResource("9_0rsy2")
+
+[node name="Label" type="Label" parent="UI/RequestPersonMenu"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 86.0
+offset_right = 165.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 30
+text = "Person"
+
+[node name="OptionButton" type="OptionButton" parent="UI/RequestPersonMenu"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 132.0
+offset_right = 200.0
+offset_bottom = 163.0
+
+[node name="Label2" type="Label" parent="UI/RequestPersonMenu"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 196.0
+offset_right = 243.0
+offset_bottom = 245.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 30
+text = "Destination"
+
+[node name="OptionButton2" type="OptionButton" parent="UI/RequestPersonMenu"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 242.0
+offset_right = 200.0
+offset_bottom = 273.0
+
+[node name="Label3" type="Label" parent="UI/RequestPersonMenu"]
+layout_mode = 0
+offset_right = 660.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 36
+text = "Request Person"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/RequestPersonMenu"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 146.0
+offset_right = 455.0
+offset_bottom = 251.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 71
+text = "GO"
+
+[node name="Timer" type="Timer" parent="UI/RequestPersonMenu"]
+wait_time = 10.0
+one_shot = true
+
+[node name="RequestPerson" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 459.0
+offset_right = 189.0
+offset_bottom = 540.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vstnf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btq87")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jlhul")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m6khp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rgtr2")
+
+[node name="DoorControlsMenu" type="Panel" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -198.0
+offset_right = 330.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w3ais")
+script = ExtResource("11_nmxpr")
+
+[node name="Close" type="TextureButton" parent="UI/DoorControlsMenu"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 9.99999
+offset_right = 610.0
+offset_bottom = 26.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("8_rqsrx")
+script = ExtResource("9_0rsy2")
+
+[node name="Label2" type="Label" parent="UI/DoorControlsMenu"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 94.0
+offset_right = 357.0
+offset_bottom = 143.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 30
+text = "Room"
+
+[node name="OptionButton2" type="OptionButton" parent="UI/DoorControlsMenu"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 140.0
+offset_right = 314.0
+offset_bottom = 171.0
+
+[node name="Label3" type="Label" parent="UI/DoorControlsMenu"]
+layout_mode = 0
+offset_right = 660.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 36
+text = "Door Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/DoorControlsMenu"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 94.0
+offset_right = 490.0
+offset_bottom = 170.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 36
+text = "Close"
+
+[node name="Timer" type="Timer" parent="UI/DoorControlsMenu"]
+wait_time = 12.0
+one_shot = true
+
+[node name="DoorControls" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 459.0
+offset_right = 288.0
+offset_bottom = 540.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vstnf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btq87")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jlhul")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m6khp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rgtr2")
+
+[node name="OxygenManagementMenu" type="Panel" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -198.0
+offset_right = 330.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w3ais")
+script = ExtResource("12_br86f")
+
+[node name="Close" type="TextureButton" parent="UI/OxygenManagementMenu"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 9.99999
+offset_right = 610.0
+offset_bottom = 26.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("8_rqsrx")
+script = ExtResource("9_0rsy2")
+
+[node name="Label2" type="Label" parent="UI/OxygenManagementMenu"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 94.0
+offset_right = 357.0
+offset_bottom = 143.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 30
+text = "Room"
+
+[node name="OptionButton2" type="OptionButton" parent="UI/OxygenManagementMenu"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 140.0
+offset_right = 314.0
+offset_bottom = 171.0
+
+[node name="Label3" type="Label" parent="UI/OxygenManagementMenu"]
+layout_mode = 0
+offset_right = 660.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 36
+text = "Oxygen Management"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/OxygenManagementMenu"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 94.0
+offset_right = 539.0
+offset_bottom = 170.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 36
+text = "Vaccum"
+
+[node name="Timer" type="Timer" parent="UI/OxygenManagementMenu"]
+wait_time = 12.0
+one_shot = true
+
+[node name="OxygenManagement" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 558.0
+offset_right = 90.0
+offset_bottom = 639.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vstnf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btq87")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jlhul")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m6khp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rgtr2")
+
+[node name="PlumbingMenu" type="Panel" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -198.0
+offset_right = 330.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w3ais")
+script = ExtResource("13_bo66o")
+
+[node name="Close" type="TextureButton" parent="UI/PlumbingMenu"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 9.99999
+offset_right = 610.0
+offset_bottom = 26.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("8_rqsrx")
+script = ExtResource("9_0rsy2")
+
+[node name="Label3" type="Label" parent="UI/PlumbingMenu"]
+layout_mode = 0
+offset_right = 660.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 36
+text = "Plumbing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/PlumbingMenu"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 165.0
+offset_right = 576.0
+offset_bottom = 241.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 36
+text = "Clog Toilets"
+
+[node name="Label2" type="Label" parent="UI/PlumbingMenu"]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 197.0
+offset_right = 551.0
+offset_bottom = 216.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 12
+text = "(one time use)"
+
+[node name="Label4" type="Label" parent="UI/PlumbingMenu"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 246.0
+offset_right = 537.0
+offset_bottom = 268.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 14
+text = "Has a chance to cause infection in nearby people"
+
+[node name="Plumbing" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 558.0
+offset_right = 189.0
+offset_bottom = 639.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vstnf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btq87")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jlhul")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m6khp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rgtr2")
+
+[node name="ReactorControlsMenu" type="Panel" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -198.0
+offset_right = 330.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w3ais")
+script = ExtResource("14_u8dfb")
+
+[node name="Close" type="TextureButton" parent="UI/ReactorControlsMenu"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 9.99999
+offset_right = 610.0
+offset_bottom = 26.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("8_rqsrx")
+script = ExtResource("9_0rsy2")
+
+[node name="Label3" type="Label" parent="UI/ReactorControlsMenu"]
+layout_mode = 0
+offset_right = 660.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 36
+text = "Reactor Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/ReactorControlsMenu"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 165.0
+offset_right = 602.0
+offset_bottom = 241.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 36
+text = "Trigger Reactor Overload"
+
+[node name="Timer" type="Timer" parent="UI/ReactorControlsMenu"]
+wait_time = 50.0
+one_shot = true
+
+[node name="ReactorControls" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 558.0
+offset_right = 288.0
+offset_bottom = 639.0
+theme_override_fonts/font = ExtResource("2_sqn7j")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vstnf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_btq87")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jlhul")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m6khp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rgtr2")
+
+[node name="MusicToggle" type="TextureButton" parent="UI"]
+layout_mode = 0
+offset_left = 1076.0
+offset_top = 580.0
+offset_right = 1092.0
+offset_bottom = 596.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("8_c0yic")
+script = ExtResource("9_jdj26")
+
 [node name="LightmapGI" type="LightmapGI" parent="."]
 generate_probes_subdiv = 3
 light_data = ExtResource("4_thi2i")
@@ -496,12 +1175,21 @@ pixel_size = 0.05
 texture_filter = 0
 texture = ExtResource("7_xf3b4")
 
-[node name="Sprite3D2" type="Sprite3D" parent="Props"]
+[node name="Plant" type="Sprite3D" parent="Props"]
 transform = Transform3D(-0.85971, 0, -0.510783, 0, 1, 0, 0.510783, 0, -0.85971, 7.13181, -1.56417, 32.0945)
 pixel_size = 0.03
 billboard = 2
 texture_filter = 0
 texture = ExtResource("8_kyk0m")
+
+[node name="LargePlant" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.85971, 0, -0.510783, 0, 1, 0, 0.510783, 0, -0.85971, 7.13181, -0.755301, 32.0945)
+visible = false
+pixel_size = 0.03
+billboard = 2
+texture_filter = 0
+texture = ExtResource("26_sy5ug")
+script = ExtResource("27_g0gw4")
 
 [node name="Sprite3D14" type="Sprite3D" parent="Props"]
 transform = Transform3D(-0.85971, 0, -0.510783, 0, 1, 0, 0.510783, 0, -0.85971, 8.31457, -1.49154, 32.0945)
@@ -770,7 +1458,7 @@ spot_angle = 63.7087
 script = ExtResource("6_2yeep")
 
 [node name="ControlCam" type="Camera3D" parent="Cameras"]
-transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 7.29862, 0.907589, 2.04773)
+transform = Transform3D(0.656059, -0.344976, 0.671251, 0, 0.889416, 0.457098, -0.754709, -0.299883, 0.58351, 7.29862, 0.907589, 2.04773)
 current = true
 
 [node name="WaterCam" type="Camera3D" parent="Cameras"]
@@ -839,7 +1527,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.738, -2.598, 7.446)
 
 [node name="Crewmates" type="Node" parent="."]
 
-[node name="Crewmate" parent="Crewmates" instance=ExtResource("7_kfv73")]
+[node name="Crewmate1" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7471, -2.502, 19.2419)
 sprite = ExtResource("10_s721i")
 
@@ -928,10 +1616,6 @@ volume_db = -15.0
 autoplay = true
 script = ExtResource("53_xxl85")
 
-[node name="Timer" type="Timer" parent="Sound/AudioStreamPlayer"]
-wait_time = 60.0
-autostart = true
-
 [node name="Crowd" type="AudioStreamPlayer3D" parent="Sound"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.883297, -1.98967, 20.7779)
 stream = ExtResource("56_7e3d7")
@@ -982,9 +1666,10 @@ autostart = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200327, -1.98967, -3.54778)
 stream = ExtResource("60_v0mvb")
 attenuation_model = 3
+volume_db = 5.0
 unit_size = 100.0
 autoplay = true
-max_distance = 10.0
+max_distance = 15.0
 attenuation_filter_cutoff_hz = 20500.0
 attenuation_filter_db = 0.0
 
@@ -1028,8 +1713,139 @@ max_distance = 8.0
 attenuation_filter_cutoff_hz = 20500.0
 attenuation_filter_db = 0.0
 
+[node name="Areas" type="Node" parent="."]
+
+[node name="Control" type="Area3D" parent="Areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.336006)
+script = ExtResource("65_ggu4t")
+id = "control"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/Control"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536537, 0)
+shape = SubResource("BoxShape3D_u8xk7")
+
+[node name="Oxygen" type="Area3D" parent="Areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.91826, 0, 9.17052)
+script = ExtResource("65_ggu4t")
+id = "oxygen"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/Oxygen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177045, -0.536537, -0.321537)
+shape = SubResource("BoxShape3D_8jr2b")
+
+[node name="Water" type="Area3D" parent="Areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5369, -0.693847, 9.17052)
+script = ExtResource("65_ggu4t")
+id = "water"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177045, -1.24406, -0.321537)
+shape = SubResource("BoxShape3D_j0o7b")
+
+[node name="Pond" type="Area3D" parent="Areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5369, -0.693847, 20.4121)
+script = ExtResource("65_ggu4t")
+id = "pond"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/Pond"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12999, -0.38754, -0.321537)
+shape = SubResource("BoxShape3D_x32ix")
+
+[node name="Plants" type="Area3D" parent="Areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.69899, -0.693847, 31.6876)
+script = ExtResource("65_ggu4t")
+id = "plants"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/Plants"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.453702, 0.240376, -0.230164)
+shape = SubResource("BoxShape3D_1qmjb")
+
+[node name="Bunks" type="Area3D" parent="Areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47812, -0.693847, 31.6876)
+script = ExtResource("65_ggu4t")
+id = "bunks"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/Bunks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.453702, -0.361396, 1.01982)
+shape = SubResource("BoxShape3D_651ye")
+
+[node name="Update" type="Timer" parent="."]
+autostart = true
+
+[node name="Door" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.28082, -1.25057, 2.80854)
+mesh = SubResource("PlaneMesh_mdaj2")
+
+[node name="Door2" type="MeshInstance3D" parent="Door"]
+mesh = SubResource("PlaneMesh_ft3od")
+skeleton = NodePath("../..")
+
+[node name="Door2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.27716, -1.25057, 2.80854)
+mesh = SubResource("PlaneMesh_mdaj2")
+
+[node name="Door2" type="MeshInstance3D" parent="Door2"]
+mesh = SubResource("PlaneMesh_ft3od")
+skeleton = NodePath("../..")
+
+[node name="Door3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 6.04869, -1.25057, 8.80077)
+mesh = SubResource("PlaneMesh_mdaj2")
+
+[node name="Door2" type="MeshInstance3D" parent="Door3"]
+mesh = SubResource("PlaneMesh_ft3od")
+skeleton = NodePath("../..")
+
+[node name="Door4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -5.82723, -1.25057, 8.80077)
+mesh = SubResource("PlaneMesh_mdaj2")
+
+[node name="Door2" type="MeshInstance3D" parent="Door4"]
+mesh = SubResource("PlaneMesh_ft3od")
+skeleton = NodePath("../..")
+
+[node name="Door5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10.6912, -2.0272, 13.7942)
+mesh = SubResource("PlaneMesh_mdaj2")
+
+[node name="Door2" type="MeshInstance3D" parent="Door5"]
+mesh = SubResource("PlaneMesh_ft3od")
+skeleton = NodePath("../..")
+
+[node name="Door6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10.6912, -2.0272, 15.575)
+mesh = SubResource("PlaneMesh_mdaj2")
+
+[node name="Door2" type="MeshInstance3D" parent="Door6"]
+mesh = SubResource("PlaneMesh_ft3od")
+skeleton = NodePath("../..")
+
+[node name="Door7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -7.25172, -1.37213, 20.0174)
+mesh = SubResource("PlaneMesh_mdaj2")
+
+[node name="Door2" type="MeshInstance3D" parent="Door7"]
+mesh = SubResource("PlaneMesh_ft3od")
+skeleton = NodePath("../..")
+
+[node name="Door8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 11.5041, -1.32446, 26.5033)
+mesh = SubResource("PlaneMesh_mdaj2")
+
+[node name="Door2" type="MeshInstance3D" parent="Door8"]
+mesh = SubResource("PlaneMesh_ft3od")
+skeleton = NodePath("../..")
+
+[node name="Door9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8.06802, -1.32446, 27.4383)
+mesh = SubResource("PlaneMesh_dyc7b")
+
+[node name="Door2" type="MeshInstance3D" parent="Door9"]
+mesh = SubResource("PlaneMesh_4cbww")
+skeleton = NodePath("../..")
+
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.627, -1.861, 28.72)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68883, -1.995, 8.99878)
 
 [connection signal="pressed" from="UI/Button" to="Cameras" method="_on_button_pressed"]
 [connection signal="pressed" from="UI/Button2" to="Cameras" method="_on_button_2_pressed"]
@@ -1041,5 +1857,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.627, -1.861, 28.72)
 [connection signal="pressed" from="UI/Button8" to="Cameras" method="_on_button_8_pressed"]
 [connection signal="pressed" from="UI/Button9" to="Cameras" method="_on_button_9_pressed"]
 [connection signal="pressed" from="UI/Button10" to="Cameras" method="_on_button_10_pressed"]
-[connection signal="timeout" from="Sound/AudioStreamPlayer/Timer" to="Sound/AudioStreamPlayer" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/CrewFilesMenu/Close" to="UI/CrewFilesMenu/Close" method="_on_pressed"]
+[connection signal="timeout" from="UI/CrewFilesMenu/Timer" to="UI/CrewFilesMenu" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/CrewFiles" to="UI/CrewFilesMenu" method="_on_crew_files_pressed"]
+[connection signal="pressed" from="UI/RequestPersonMenu/Close" to="UI/RequestPersonMenu/Close" method="_on_pressed"]
+[connection signal="pressed" from="UI/RequestPersonMenu/Button" to="UI/RequestPersonMenu" method="_on_button_pressed"]
+[connection signal="timeout" from="UI/RequestPersonMenu/Timer" to="UI/RequestPersonMenu" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/RequestPerson" to="UI/RequestPersonMenu" method="_on_request_person_pressed"]
+[connection signal="pressed" from="UI/DoorControlsMenu/Close" to="UI/DoorControlsMenu/Close" method="_on_pressed"]
+[connection signal="pressed" from="UI/DoorControlsMenu/Button" to="UI/DoorControlsMenu" method="_on_button_pressed"]
+[connection signal="timeout" from="UI/DoorControlsMenu/Timer" to="UI/DoorControlsMenu" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/DoorControls" to="UI/DoorControlsMenu" method="_on_door_controls_pressed"]
+[connection signal="pressed" from="UI/OxygenManagementMenu/Close" to="UI/OxygenManagementMenu/Close" method="_on_pressed"]
+[connection signal="pressed" from="UI/OxygenManagementMenu/Button" to="UI/OxygenManagementMenu" method="_on_button_pressed"]
+[connection signal="timeout" from="UI/OxygenManagementMenu/Timer" to="UI/OxygenManagementMenu" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/OxygenManagement" to="UI/OxygenManagementMenu" method="_on_oxygen_management_pressed"]
+[connection signal="pressed" from="UI/PlumbingMenu/Close" to="UI/PlumbingMenu/Close" method="_on_pressed"]
+[connection signal="pressed" from="UI/PlumbingMenu/Button" to="UI/PlumbingMenu" method="_on_button_pressed"]
+[connection signal="pressed" from="UI/Plumbing" to="UI/PlumbingMenu" method="_on_plumbing_pressed"]
+[connection signal="pressed" from="UI/ReactorControlsMenu/Close" to="UI/ReactorControlsMenu/Close" method="_on_pressed"]
+[connection signal="pressed" from="UI/ReactorControlsMenu/Button" to="UI/ReactorControlsMenu" method="_on_button_pressed"]
+[connection signal="timeout" from="UI/ReactorControlsMenu/Timer" to="UI/ReactorControlsMenu" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/ReactorControls" to="UI/ReactorControlsMenu" method="_on_reactor_controls_pressed"]
+[connection signal="pressed" from="UI/MusicToggle" to="UI/MusicToggle" method="_on_pressed"]
 [connection signal="timeout" from="Sound/Fart/Timer" to="Sound" method="_on_timer_timeout"]
+[connection signal="timeout" from="Update" to="." method="_on_update_timeout"]

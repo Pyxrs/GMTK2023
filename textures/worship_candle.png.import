@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qo2vepr1saae"
-path.s3tc="res://.godot/imported/worship_candle.png-2b259d0851556df4b7ff5ee56a08b60e.s3tc.ctex"
+path="res://.godot/imported/worship_candle.png-2b259d0851556df4b7ff5ee56a08b60e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://textures/worship_candle.png"
-dest_files=["res://.godot/imported/worship_candle.png-2b259d0851556df4b7ff5ee56a08b60e.s3tc.ctex"]
+dest_files=["res://.godot/imported/worship_candle.png-2b259d0851556df4b7ff5ee56a08b60e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

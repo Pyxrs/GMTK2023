@@ -56,8 +56,10 @@ var shittiness = randf()
 var paranoia = 0.0
 
 var cleaned = false
+var pathfinding_valid = true
 
 var action = Actions.WORK
+var distracted = 0
 
 func _ready():
 	var eye_pos = -0.9 + (eye_height * (0.7 / 15.0))
@@ -79,6 +81,11 @@ func _ready():
 	call_deferred("nav_setup")
 
 func _process(delta):
+	if distracted > 0:
+		distracted -= delta
+	
+	$PathfindingPoint.global_position = $NavigationAgent3D.get_final_position()
+	
 	# Walking animation
 	var less_varying_speed = (speed / 2) + 0.5
 	$Sprite3D.position.x = cos(Global.time * BOUNCE_SPEED * less_varying_speed) * BOUNCE_SCALE * velocity.length()
@@ -92,20 +99,32 @@ func _physics_process(delta):
 		velocity /= 1.05
 		return
 
-	velocity = (navigation_agent.get_next_path_position() - global_position).normalized() * 0.05 * speed
-	position += velocity
+	if pathfinding_valid:
+		velocity = (navigation_agent.get_next_path_position() - global_position).normalized() * 0.05 * speed
+		position += velocity
+	else:
+		velocity = velocity.move_toward(Vector3.ZERO, delta * 10)
 
 func _on_action_tick_timeout():
 	$ActionTick.wait_time = randf_range(10, 20) * (1 / speed)
 	cleaned = false
 	stop_action()
 	tick_status()
-	update_overlay()
 	
-	action = decide_action()
-	start_action()
+	if distracted <= 0:
+		action = decide_action()
+		if action == Actions.WORSHIP:
+			for c in get_parent().get_children():
+				c.paranoia += 0.015
+		start_action()
 
 func _on_idle_tick_timeout():
+	update_overlay()
+	pathfinding_valid = true
+	for a in $PathfindingPoint.get_overlapping_areas():
+		if a.has_method("unique") and get_parent().get_parent().rooms[a.id].closed > 0:
+			pathfinding_valid = false
+	
 	if action == Actions.WORK and (navigation_agent.is_navigation_finished() or !navigation_agent.is_target_reachable()):
 		$IdleTick.wait_time = randf() * 5 * (1 / speed)
 		pathfind_to(Vector3(position.x + randf_range(-2, 2), position.y, position.z + randf_range(-2, 2)))
@@ -126,6 +145,10 @@ func nav_setup():
 	_on_action_tick_timeout()
 
 func pathfind_to(movement_target: Vector3):
+	for a in $Area3D.get_overlapping_areas():
+		if a.has_method("unique") and get_parent().get_parent().rooms[a.id].closed > 0:
+			return
+	
 	navigation_agent.set_target_position(movement_target)
 
 func tick_status():
@@ -141,6 +164,7 @@ func tick_status():
 	social = clamp(social, 0, 1)
 	work = clamp(work, 0, 1)
 	shittiness = clamp(shittiness, 0, 1)
+	paranoia = clamp(paranoia, 0, 2)
 
 func decide_action():
 	var options = [
@@ -205,7 +229,9 @@ func start_action():
 	elif action == Actions.SLEEP:
 		pathfind_to(Vector3(-3.627 + randf_range(-1.5, 1.5), -1.861, 28.72))
 	elif action == Actions.TALK:
-		var target = get_parent().get_child(randi_range(0, 14))
+		var target = get_parent().get_child(randi_range(0, get_parent().get_children().size() - 1))
+		while !target.has_method("die"):
+			target = get_parent().get_child(randi_range(0, get_parent().get_children().size() - 1))
 		pathfind_to(target.position)
 	elif action == Actions.WORK:
 		pathfind_to(work_positions.get_child(person).position)

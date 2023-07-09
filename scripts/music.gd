@@ -1,5 +1,7 @@
 extends AudioStreamPlayer
 
-func _on_timer_timeout():
-	if randf() > 0.5:
+func _process(delta):
+	if Global.music and !playing:
 		play()
+	if !Global.music and playing:
+		stop()
