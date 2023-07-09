@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://cr0u0jxflsky5"]
+[gd_scene load_steps=126 format=3 uid="uid://cr0u0jxflsky5"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_5qkmx"]
 [ext_resource type="Texture2D" uid="uid://bjujjt80eq4d0" path="res://textures/map.png" id="1_refm8"]
@@ -62,6 +62,10 @@
 [ext_resource type="Texture2D" uid="uid://758xtg4tcodl" path="res://textures/bedington.png" id="28_o0iv2"]
 [ext_resource type="Texture2D" uid="uid://wktk4ru3uold" path="res://textures/shit_stain.png" id="29_pc04x"]
 [ext_resource type="Texture2D" uid="uid://dqlcgjsf1rxwv" path="res://Crew sprites/Andrewhead.png" id="29_uxgq1"]
+[ext_resource type="Texture2D" uid="uid://dv1lqgeygwahm" path="res://Crew sprites/monitor.png" id="31_kqpry"]
+[ext_resource type="Texture2D" uid="uid://367tbd7w53qp" path="res://Crew sprites/o2 TANKS.png" id="32_ucdvn"]
+[ext_resource type="Texture2D" uid="uid://cj12b2oyvgu7l" path="res://Crew sprites/o2_Server.png" id="33_62c35"]
+[ext_resource type="Texture2D" uid="uid://dkqh64y1uxtim" path="res://Crew sprites/o2 Fanspriteoutlines.png" id="34_ouwfv"]
 [ext_resource type="ArrayMesh" uid="uid://dklvirg37lp61" path="res://models/tv/model.obj" id="34_r0r2i"]
 [ext_resource type="ArrayMesh" uid="uid://cnoc1hlyw63qa" path="res://models/moppington/Mop&Bucket.obj" id="45_000ij"]
 [ext_resource type="ArrayMesh" uid="uid://be3k2qyuulim4" path="res://models/fhishtnak/FishTank.obj" id="46_eet08"]
@@ -1218,12 +1222,40 @@ texture_filter = 0
 texture = ExtResource("10_24jlr")
 
 [node name="Sprite3D5" type="Sprite3D" parent="Props"]
+transform = Transform3D(0.396167, 0, 0, 0, 0.396167, 0, 0, 0, 0.396167, 2.69343, -4.9448, 2.40454)
 pixel_size = 0.05
 texture_filter = 0
+texture = ExtResource("31_kqpry")
 
 [node name="Sprite3D4" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.722646, -0.01923, 0.690951, 0.0217897, 0.998482, 0.0505782, -0.690875, 0.0516057, -0.72113, 7.78529, -1.50961, 11.2793)
 pixel_size = 0.05
 texture_filter = 0
+texture = ExtResource("32_ucdvn")
+
+[node name="Sprite3D16" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.892564, 0.0168745, 0.0514023, 0.0194844, 0.892845, 0.0452271, -0.0504708, 0.0462643, -0.891576, 11.9353, -1.39638, 12.3228)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("33_62c35")
+
+[node name="Sprite3D17" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.892564, 0.0168745, 0.0514023, 0.0194844, 0.892845, 0.0452271, -0.0504708, 0.0462643, -0.891576, 9.77485, -1.39638, 12.3228)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("33_62c35")
+
+[node name="Sprite3D19" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.499284, 0.0313854, 0.166939, 0.0131474, 0.675341, -0.0150893, 0.338532, 0.020061, 0.246797, 12.0751, 0.407205, 11.4477)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("34_ouwfv")
+
+[node name="Sprite3D18" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.892564, 0.0168745, 0.0514023, 0.0194844, 0.892845, 0.0452271, -0.0504708, 0.0462643, -0.891576, 10.9155, -1.39638, 12.3228)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("33_62c35")
 
 [node name="GardenWall" type="MeshInstance3D" parent="Props"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.16313, -2.45795, 31.0104)
@@ -1468,7 +1500,7 @@ transform = Transform3D(-0.755007, 0.140805, -0.64042, -6.27392e-09, 0.976672, 0
 transform = Transform3D(0.118404, 0.213225, -0.969802, 0, 0.976672, 0.214735, 0.992966, -0.0254255, 0.115642, -5.51258, -0.458, 9.841)
 
 [node name="OxygenCam" type="Camera3D" parent="Cameras"]
-transform = Transform3D(-0.677531, -0.157937, 0.718337, -1.84954e-09, 0.976672, 0.214735, -0.735494, 0.14549, -0.661726, 12.449, -0.458, 5.07198)
+transform = Transform3D(-0.677531, -0.157937, 0.718337, -1.84954e-09, 0.976672, 0.214736, -0.735494, 0.14549, -0.661726, 12.449, -0.458, 5.07198)
 
 [node name="KitchenCam" type="Camera3D" parent="Cameras"]
 transform = Transform3D(-0.677531, -0.157937, 0.718337, -1.84954e-09, 0.976672, 0.214735, -0.735494, 0.14549, -0.661726, 12.912, -0.458, 15.3)
@@ -1579,14 +1611,11 @@ sprite = ExtResource("19_q1xlp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99772, -2.502, 31.5694)
 person = 7
 sprite = ExtResource("20_o2wre")
-work_ethic = 2.5
-eye_height = 14
 
 [node name="Crewmate12" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6453, -2.502, 21.1178)
 person = 8
 sprite = ExtResource("21_3xwek")
-eye_height = 14
 
 [node name="Crewmate13" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7471, -2.502, 24.2443)
@@ -1597,15 +1626,11 @@ sprite = ExtResource("22_ey7of")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5432, -2.502, 0.0359684)
 person = 8
 sprite = ExtResource("23_i0wtr")
-work_ethic = 0.5
-eye_height = 16
 
 [node name="Crewmate15" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58582, -2.502, -0.0533603)
 person = 9
 sprite = ExtResource("24_g0clw")
-work_ethic = 1.5
-eye_height = 14
 
 [node name="Sound" type="Node" parent="."]
 script = ExtResource("54_1rdtm")
