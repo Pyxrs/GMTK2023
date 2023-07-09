@@ -63,7 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://wktk4ru3uold" path="res://textures/shit_stain.png" id="29_pc04x"]
 [ext_resource type="Texture2D" uid="uid://dqlcgjsf1rxwv" path="res://Crew sprites/Andrewhead.png" id="29_uxgq1"]
 [ext_resource type="Texture2D" uid="uid://dv1lqgeygwahm" path="res://Crew sprites/monitor.png" id="31_kqpry"]
-[ext_resource type="Texture2D" uid="uid://367tbd7w53qp" path="res://Crew sprites/o2 TANKS.png" id="32_ucdvn"]
+[ext_resource type="Texture2D" uid="uid://b363vt861cre5" path="res://Crew sprites/o2 TANKSoutline.png" id="32_kf4fo"]
 [ext_resource type="Texture2D" uid="uid://cj12b2oyvgu7l" path="res://Crew sprites/o2_Server.png" id="33_62c35"]
 [ext_resource type="Texture2D" uid="uid://dkqh64y1uxtim" path="res://Crew sprites/o2 Fanspriteoutlines.png" id="34_ouwfv"]
 [ext_resource type="ArrayMesh" uid="uid://dklvirg37lp61" path="res://models/tv/model.obj" id="34_r0r2i"]
@@ -1203,7 +1203,7 @@ texture_filter = 0
 texture = ExtResource("13_akygu")
 
 [node name="Sprite3D15" type="Sprite3D" parent="Props"]
-transform = Transform3D(-0.85971, 0, -0.510783, 0, 1, 0, 0.510783, 0, -0.85971, 8.03131, -1.54971, 31.1767)
+transform = Transform3D(-0.85971, 0, -0.510783, 0, 1, 0, 0.510783, 0, -0.85971, 7.62448, -1.54971, 31.1767)
 pixel_size = 0.025
 billboard = 2
 texture_filter = 0
@@ -1231,7 +1231,13 @@ texture = ExtResource("31_kqpry")
 transform = Transform3D(-0.722646, -0.01923, 0.690951, 0.0217897, 0.998482, 0.0505782, -0.690875, 0.0516057, -0.72113, 7.78529, -1.50961, 11.2793)
 pixel_size = 0.05
 texture_filter = 0
-texture = ExtResource("32_ucdvn")
+texture = ExtResource("32_kf4fo")
+
+[node name="Sprite3D29" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.722646, -0.01923, 0.690951, 0.0217897, 0.998482, 0.0505782, -0.690875, 0.0516057, -0.72113, 7.78529, -1.50961, 11.2793)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("32_kf4fo")
 
 [node name="Sprite3D16" type="Sprite3D" parent="Props"]
 transform = Transform3D(-0.892564, 0.0168745, 0.0514023, 0.0194844, 0.892845, 0.0452271, -0.0504708, 0.0462643, -0.891576, 11.9353, -1.39638, 12.3228)
@@ -1245,8 +1251,44 @@ pixel_size = 0.05
 texture_filter = 0
 texture = ExtResource("33_62c35")
 
+[node name="Sprite3D27" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.0667718, 0.0465649, -0.890488, 0.0194844, 0.892844, 0.0452271, 0.891492, -0.0160263, -0.0676851, -0.584696, -1.39638, 34.2603)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("33_62c35")
+
+[node name="Sprite3D28" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.0667718, 0.0465649, -0.890488, 0.0194844, 0.892844, 0.0452271, 0.891492, -0.0160263, -0.0676851, -0.584696, -1.39638, 35.3874)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("33_62c35")
+
 [node name="Sprite3D19" type="Sprite3D" parent="Props"]
 transform = Transform3D(-0.499284, 0.0313854, 0.166939, 0.0131474, 0.675341, -0.0150893, 0.338532, 0.020061, 0.246797, 12.0751, 0.407205, 11.4477)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("34_ouwfv")
+
+[node name="Sprite3D20" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.499284, 0.0313854, 0.166939, 0.0131474, 0.675341, -0.0150893, 0.338532, 0.020061, 0.246797, 12.0751, 0.407205, 11.4477)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("34_ouwfv")
+
+[node name="Sprite3D21" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.499284, 0.0313854, 0.166939, 0.0131474, 0.675341, -0.0150893, 0.338532, 0.020061, 0.246797, 12.0751, 0.407205, 11.4477)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("34_ouwfv")
+
+[node name="Sprite3D22" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.00459445, 0.0343286, 0.297944, 0.0131474, 0.675341, -0.0150893, 0.603214, -0.0144579, 0.00259823, -0.400478, -0.739979, 29.9676)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("34_ouwfv")
+
+[node name="Sprite3D23" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.00459445, 0.0343286, 0.297944, 0.0131474, 0.675341, -0.0150893, 0.603214, -0.0144579, 0.00259823, -0.401198, -0.739979, 31.0657)
 pixel_size = 0.05
 texture_filter = 0
 texture = ExtResource("34_ouwfv")
@@ -1358,14 +1400,32 @@ pixel_size = 0.045
 texture_filter = 0
 texture = ExtResource("28_o0iv2")
 
+[node name="Sprite3D24" type="Sprite3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52697, -1.3853, 31.1499)
+pixel_size = 0.045
+texture_filter = 0
+texture = ExtResource("28_o0iv2")
+
 [node name="Sprite3D8" type="Sprite3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.41775, -1.3853, 27.9043)
 pixel_size = 0.045
 texture_filter = 0
 texture = ExtResource("28_o0iv2")
 
+[node name="Sprite3D25" type="Sprite3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2681, -1.3853, 31.1955)
+pixel_size = 0.045
+texture_filter = 0
+texture = ExtResource("28_o0iv2")
+
 [node name="Sprite3D9" type="Sprite3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.31085, -1.3853, 27.9043)
+pixel_size = 0.045
+texture_filter = 0
+texture = ExtResource("28_o0iv2")
+
+[node name="Sprite3D26" type="Sprite3D" parent="Props"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.58982, -1.3853, 31.0221)
 pixel_size = 0.045
 texture_filter = 0
 texture = ExtResource("28_o0iv2")
