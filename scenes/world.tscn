@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://cr0u0jxflsky5"]
+[gd_scene load_steps=127 format=3 uid="uid://cr0u0jxflsky5"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_5qkmx"]
 [ext_resource type="Texture2D" uid="uid://bjujjt80eq4d0" path="res://textures/map.png" id="1_refm8"]
@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://dv1lqgeygwahm" path="res://Crew sprites/monitor.png" id="31_kqpry"]
 [ext_resource type="Texture2D" uid="uid://b363vt861cre5" path="res://Crew sprites/o2 TANKSoutline.png" id="32_kf4fo"]
 [ext_resource type="Texture2D" uid="uid://cj12b2oyvgu7l" path="res://Crew sprites/o2_Server.png" id="33_62c35"]
+[ext_resource type="Texture2D" uid="uid://k0f1yv36tyuo" path="res://textures/Goofylittlefish.png" id="33_m5p07"]
 [ext_resource type="Texture2D" uid="uid://dkqh64y1uxtim" path="res://Crew sprites/o2 Fanspriteoutlines.png" id="34_ouwfv"]
 [ext_resource type="ArrayMesh" uid="uid://dklvirg37lp61" path="res://models/tv/model.obj" id="34_r0r2i"]
 [ext_resource type="ArrayMesh" uid="uid://cnoc1hlyw63qa" path="res://models/moppington/Mop&Bucket.obj" id="45_000ij"]
@@ -1234,10 +1235,10 @@ texture_filter = 0
 texture = ExtResource("32_kf4fo")
 
 [node name="Sprite3D29" type="Sprite3D" parent="Props"]
-transform = Transform3D(-0.722646, -0.01923, 0.690951, 0.0217897, 0.998482, 0.0505782, -0.690875, 0.0516057, -0.72113, 7.78529, -1.50961, 11.2793)
+transform = Transform3D(0.485922, 0.00510809, -0.304047, 0.012483, 0.613241, 0.029037, 0.303183, -0.0334359, 0.486111, -10.9708, -3.78315, 18.9815)
 pixel_size = 0.05
 texture_filter = 0
-texture = ExtResource("32_kf4fo")
+texture = ExtResource("33_m5p07")
 
 [node name="Sprite3D16" type="Sprite3D" parent="Props"]
 transform = Transform3D(-0.892564, 0.0168745, 0.0514023, 0.0194844, 0.892845, 0.0452271, -0.0504708, 0.0462643, -0.891576, 11.9353, -1.39638, 12.3228)
