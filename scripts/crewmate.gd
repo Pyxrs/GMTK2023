@@ -25,7 +25,6 @@ enum Actions {
 	SHIT,
 	PANIC,
 	WORSHIP,
-	FLEE,
 }
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
@@ -34,11 +33,14 @@ enum Actions {
 @export var person: Person
 @export var sprite: Texture2D
 @export var work_ethic = 1.0
+@export var eye_height = 15
 
 var paranoid_sprite1 = preload("res://Crew sprites/Parranoyed overlay.png")
 var paranoid_sprite2 = preload("res://Crew sprites/Parranoyed overlay2.png")
 var possessed_sprite = preload("res://Crew sprites/Poseesed overlay.png")
 var sick_sprite = preload("res://Crew sprites/Sick Overlay.png")
+
+var dead_scene = preload("res://scenes/dead.tscn")
 
 var velocity = Vector3.ZERO
 var speed = (randf_range(0, 0.75) + 0.5) * (work_ethic / 2 + 0.5)
@@ -52,16 +54,17 @@ var social = randf()
 var work = randf()
 var shittiness = randf()
 var paranoia = 0.0
-var fear = 0.0
+
+var cleaned = false
 
 var action = Actions.WORK
 
 func _ready():
-	if randf() < 0.3:
-		sick = true
-	elif randf() < 0.3:
-		cultist = true
-	update_overlay()
+	var eye_pos = -0.9 + (eye_height * (0.7 / 15.0))
+	$Sprite3D/Overlay.position.y = eye_pos
+	$Sprite3D/Overlay2.position.y = eye_pos
+	$Sprite3D/Overlay3.position.y = eye_pos
+	$Sprite3D/Overlay4.position.y = eye_pos
 	
 	$ActionTick.wait_time = randf_range(10, 20) * (1 / speed)
 	$ActionTick.start()
@@ -76,7 +79,6 @@ func _ready():
 	call_deferred("nav_setup")
 
 func _process(delta):
-	pass
 	# Walking animation
 	var less_varying_speed = (speed / 2) + 0.5
 	$Sprite3D.position.x = cos(Global.time * BOUNCE_SPEED * less_varying_speed) * BOUNCE_SCALE * velocity.length()
@@ -84,8 +86,6 @@ func _process(delta):
 	if velocity.length() > 0.02 and -sin(Global.time * BOUNCE_SPEED * less_varying_speed * 2) > 0.9 and !$Jump.playing:
 		$Jump.pitch_scale = randf_range(0.8, 1.2)
 		$Jump.play()
-	#if slope > 0.9 and v
-	#print(slope)
 
 func _physics_process(delta):
 	if navigation_agent.is_navigation_finished():
@@ -97,8 +97,10 @@ func _physics_process(delta):
 
 func _on_action_tick_timeout():
 	$ActionTick.wait_time = randf_range(10, 20) * (1 / speed)
+	cleaned = false
 	stop_action()
 	tick_status()
+	update_overlay()
 	
 	action = decide_action()
 	start_action()
@@ -107,6 +109,16 @@ func _on_idle_tick_timeout():
 	if action == Actions.WORK and (navigation_agent.is_navigation_finished() or !navigation_agent.is_target_reachable()):
 		$IdleTick.wait_time = randf() * 5 * (1 / speed)
 		pathfind_to(Vector3(position.x + randf_range(-2, 2), position.y, position.z + randf_range(-2, 2)))
+	if action == Actions.PANIC:
+		$IdleTick.wait_time = randf_range(0.2, 0.5)
+		pathfind_to(Vector3(position.x + randf_range(-10, 10), position.y, position.z + randf_range(-10, 10)))
+
+func die():
+	var corpse = dead_scene.instantiate()
+	corpse.position = position
+	corpse.sprite = $Sprite3D.texture
+	get_parent().add_child(corpse)
+	queue_free()
 
 func nav_setup():
 	# Wait for the first physics frame to sync
@@ -163,7 +175,7 @@ func update_overlay():
 	elif cultist:
 		set_overlays(true, possessed_sprite)
 	elif paranoia > 0.75:
-		if floor(Global.time) % 2 == 0:
+		if int(floor(Global.time)) % 2 == 0:
 			set_overlays(true, paranoid_sprite1)
 		else:
 			set_overlays(true, paranoid_sprite2)
@@ -248,8 +260,6 @@ func _on_navigation_agent_3d_navigation_finished():
 		$AnimatedSprite3D.frame = 4
 	elif action == Actions.WORSHIP:
 		$AnimatedSprite3D.frame = 5
-	elif action == Actions.FLEE:
-		$AnimatedSprite3D.frame = 6
 
 # Thoughts
 func _on_thought_timer_timeout():

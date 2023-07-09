@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5qxhw04qjrnv"]
+
+[ext_resource type="Script" path="res://scripts/dead.gd" id="1_pq4s8"]
+[ext_resource type="Texture2D" uid="uid://u118r01fl6q5" path="res://Crew sprites/Botany1.png" id="2_s7g43"]
+[ext_resource type="Texture2D" uid="uid://co7gguy00wwnv" path="res://Crew sprites/Dead Overlay.png" id="3_47oeg"]
+
+[node name="Dead" type="Node3D"]
+script = ExtResource("1_pq4s8")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.170004)
+cast_shadow = 0
+pixel_size = 0.05
+double_sided = false
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_s7g43")
+
+[node name="Overlay" type="Sprite3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0.001)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("3_47oeg")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

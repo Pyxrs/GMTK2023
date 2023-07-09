@@ -792,7 +792,7 @@ transform = Transform3D(0.594823, 0.516709, -0.61579, 0, 0.766044, 0.642788, 0.8
 transform = Transform3D(0.594823, 0.337179, -0.729723, 0, 0.907777, 0.419452, 0.803857, -0.2495, 0.539967, -14.604, -0.798, 23.535)
 
 [node name="ShitterCam" type="Camera3D" parent="Cameras"]
-transform = Transform3D(-4.37114e-08, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 2.18557e-08, -3.78552e-08, -15.006, -0.063, 30.771)
+transform = Transform3D(-4.37114e-08, 0.5, -0.866025, 0, 0.866025, 0.5, 1, 2.18557e-08, -3.78552e-08, -14.8876, -0.139729, 30.771)
 
 [node name="BedCam" type="Camera3D" parent="Cameras"]
 transform = Transform3D(0.955793, 0.0889089, -0.280277, 0, 0.953191, 0.30237, 0.29404, -0.289003, 0.911053, -6.091, -1.148, 35.491)
@@ -891,11 +891,14 @@ sprite = ExtResource("19_q1xlp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99772, -2.502, 31.5694)
 person = 7
 sprite = ExtResource("20_o2wre")
+work_ethic = 2.5
+eye_height = 14
 
 [node name="Crewmate12" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6453, -2.502, 21.1178)
 person = 8
 sprite = ExtResource("21_3xwek")
+eye_height = 14
 
 [node name="Crewmate13" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7471, -2.502, 24.2443)
@@ -906,11 +909,15 @@ sprite = ExtResource("22_ey7of")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5432, -2.502, 0.0359684)
 person = 8
 sprite = ExtResource("23_i0wtr")
+work_ethic = 0.5
+eye_height = 16
 
 [node name="Crewmate15" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58582, -2.502, -0.0533603)
 person = 9
 sprite = ExtResource("24_g0clw")
+work_ethic = 1.5
+eye_height = 14
 
 [node name="Sound" type="Node" parent="."]
 script = ExtResource("54_1rdtm")
