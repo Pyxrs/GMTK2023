@@ -146,7 +146,7 @@ one_shot = true
 
 [node name="Jump" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_74wpd")
-volume_db = -5.0
+volume_db = -10.0
 max_distance = 10.0
 
 [node name="Area3D" type="Area3D" parent="."]

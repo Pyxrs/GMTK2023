@@ -1,10 +1,11 @@
 extends Sprite3D
 
 var go = false
+var end = false
 var kill_count = 0
 
 func _process(delta):
-	if get_parent().get_parent().rooms.plants.oxygen > 0:
+	if get_parent().get_parent().rooms.plants.oxygen > 0 and !end:
 		go = true
 		show()
 	
@@ -15,4 +16,5 @@ func _process(delta):
 				kill_count += 1
 				if kill_count >= 2:
 					go = false
+					end = true
 					hide()

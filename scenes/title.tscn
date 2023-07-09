@@ -1,55 +1,60 @@
-[gd_scene load_steps=12 format=3 uid="uid://b06jutsrkpv8m"]
+[gd_scene load_steps=10 format=3 uid="uid://b06jutsrkpv8m"]
 
-[ext_resource type="Shader" path="res://materials/sky.gdshader" id="1_5mn0h"]
-[ext_resource type="Shader" path="res://materials/window.gdshader" id="3_xc68b"]
-[ext_resource type="Texture2D" uid="uid://djoism40fdgcs" path="res://textures/StellerEdge.png" id="4_jdgj1"]
-[ext_resource type="Shader" path="res://materials/pixel.gdshader" id="5_7n7o6"]
+[ext_resource type="Environment" uid="uid://c5wcdnsg4u7c5" path="res://scenes/env.tres" id="1_2ps8d"]
+[ext_resource type="Texture2D" uid="uid://b2kapfc3v6s4k" path="res://textures/logo.png" id="2_0fcvb"]
+[ext_resource type="FontFile" uid="uid://x3v7bdenwaai" path="res://Orbitron-Regular.ttf" id="2_1o2ar"]
+[ext_resource type="Script" path="res://scripts/title.gd" id="2_rerd1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fm160"]
-shader = ExtResource("1_5mn0h")
-shader_parameter/background = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ps06"]
 
-[sub_resource type="Sky" id="Sky_bwi4a"]
-sky_material = SubResource("ShaderMaterial_fm160")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdsk0"]
 
-[sub_resource type="Environment" id="Environment_ifu4h"]
-background_mode = 2
-sky = SubResource("Sky_bwi4a")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_juoyu"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_erqug"]
-size = Vector2(8.5, 2)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ukhnh"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yuirf"]
-render_priority = 0
-shader = ExtResource("3_xc68b")
-shader_parameter/dimensions = Vector2(1024, 600)
-shader_parameter/size = Vector2(8.5, 2)
-shader_parameter/logo = ExtResource("4_jdgj1")
-
-[sub_resource type="BoxMesh" id="BoxMesh_xirif"]
-size = Vector3(1.96, 1.115, 3.305)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rut7j"]
-render_priority = 0
-shader = ExtResource("5_7n7o6")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j0be4"]
 
 [node name="Title" type="Node3D"]
 
 [node name="Environment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ifu4h")
+environment = ExtResource("1_2ps8d")
 
-[node name="Exterior" type="MeshInstance3D" parent="."]
-transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, -21.8318)
-metadata/_edit_group_ = true
+[node name="Camera3D" type="Camera3D" parent="."]
 
-[node name="Logo" type="MeshInstance3D" parent="Exterior"]
-transform = Transform3D(-0.00334408, -0.0627984, -0.108029, 0, 0.108067, -0.0628209, 0.124955, -0.00168063, -0.00289109, -1.17736, 0.629135, 0.273409)
-mesh = SubResource("PlaneMesh_erqug")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("ShaderMaterial_yuirf")
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 275.0
+script = ExtResource("2_rerd1")
 
-[node name="Pixelizer" type="MeshInstance3D" parent="Exterior"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00928493, 0)
-mesh = SubResource("BoxMesh_xirif")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("ShaderMaterial_rut7j")
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 41.0
+offset_right = 753.0
+offset_bottom = 287.0
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_0fcvb")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 403.0
+offset_right = 825.0
+offset_bottom = 575.0
+theme_override_fonts/font = ExtResource("2_1o2ar")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ps06")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jdsk0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_juoyu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ukhnh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j0be4")
+text = "[ Play ]"
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]

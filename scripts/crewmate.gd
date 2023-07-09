@@ -55,7 +55,6 @@ var work = randf()
 var shittiness = randf()
 var paranoia = 0.0
 
-var cleaned = false
 var pathfinding_valid = true
 
 var action = Actions.WORK
@@ -107,15 +106,11 @@ func _physics_process(delta):
 
 func _on_action_tick_timeout():
 	$ActionTick.wait_time = randf_range(10, 20) * (1 / speed)
-	cleaned = false
 	stop_action()
 	tick_status()
 	
 	if distracted <= 0:
 		action = decide_action()
-		if action == Actions.WORSHIP:
-			for c in get_parent().get_children():
-				c.paranoia += 0.015
 		start_action()
 
 func _on_idle_tick_timeout():
@@ -174,7 +169,7 @@ func decide_action():
 		[Actions.WORK, (1 - self.work) * work_ethic / 1.5],
 		[Actions.SHIT, (self.shittiness) / 1.2],
 		[Actions.PANIC, (self.paranoia)],
-		[Actions.WORSHIP, (self.paranoia / 2.0) + ((1 - self.energy) / 3.0)],
+		[Actions.WORSHIP, (self.paranoia / 2.0) + ((1 - self.energy) / 2.0)],
 	]
 	if person == Person.SHITTER:
 		options[1][1] -= 0.5
@@ -224,15 +219,28 @@ func set_overlays(show, texture: Texture2D):
 		$Sprite3D/Overlay4.texture = texture
 
 func start_action():
+	if sick and randf() < 0.1:
+		if randf() > 0.3:
+			var guy = get_parent().get_child(get_parent().get_children().size() - 1)
+			if guy.has_method("die"):
+				guy.sick = true
+		else:
+			die()
+	
 	if action == Actions.EAT:
 		pathfind_to(Vector3(8.716, -2.055, 20.688 + randf_range(-3, 3)))
 	elif action == Actions.SLEEP:
 		pathfind_to(Vector3(-3.627 + randf_range(-1.5, 1.5), -1.861, 28.72))
 	elif action == Actions.TALK:
-		var target = get_parent().get_child(randi_range(0, get_parent().get_children().size() - 1))
-		while !target.has_method("die"):
+		var target
+		var found = false
+		for i in range(20):
 			target = get_parent().get_child(randi_range(0, get_parent().get_children().size() - 1))
-		pathfind_to(target.position)
+			if target.has_method("die"):
+				found = true
+				break
+		if found:
+			pathfind_to(target.position)
 	elif action == Actions.WORK:
 		pathfind_to(work_positions.get_child(person).position)
 	elif action == Actions.SHIT:
@@ -260,6 +268,15 @@ func stop_action():
 		_on_navigation_agent_3d_navigation_finished()
 		if !Global.worship_totem:
 			get_parent().get_parent().get_node("WorshipTotem").show()
+		if cultist:
+			for c in get_parent().get_children():
+				if c.has_method("die") and global_position.distance_squared_to(c.global_position) < 20:
+					if randf() < 0.01:
+						c.cultist = true
+					elif randf() < 0.03:
+						c.die()
+					elif randf() < 0.1:
+						paranoia += 0.015
 
 func sort_weights(a, b):
 	return a[1] > b[1]
