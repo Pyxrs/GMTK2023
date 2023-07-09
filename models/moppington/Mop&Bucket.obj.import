@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnoc1hlyw63qa"
+path="res://.godot/imported/Mop&Bucket.obj-71bf45f10249c76de249dea8362e2df1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Mop&Bucket.obj-71bf45f10249c76de249dea8362e2df1.mesh"]
+
+source_file="res://models/moppington/Mop&Bucket.obj"
+dest_files=["res://.godot/imported/Mop&Bucket.obj-71bf45f10249c76de249dea8362e2df1.mesh", "res://.godot/imported/Mop&Bucket.obj-71bf45f10249c76de249dea8362e2df1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

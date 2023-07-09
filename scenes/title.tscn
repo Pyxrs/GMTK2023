@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://b06jutsrkpv8m"]
+[gd_scene load_steps=12 format=3 uid="uid://b06jutsrkpv8m"]
 
 [ext_resource type="Shader" path="res://materials/sky.gdshader" id="1_5mn0h"]
-[ext_resource type="ArrayMesh" path="res://models/exterior.obj" id="2_axmh1"]
 [ext_resource type="Shader" path="res://materials/window.gdshader" id="3_xc68b"]
 [ext_resource type="Texture2D" uid="uid://djoism40fdgcs" path="res://textures/StellerEdge.png" id="4_jdgj1"]
 [ext_resource type="Shader" path="res://materials/pixel.gdshader" id="5_7n7o6"]
@@ -16,19 +15,6 @@ sky_material = SubResource("ShaderMaterial_fm160")
 [sub_resource type="Environment" id="Environment_ifu4h"]
 background_mode = 2
 sky = SubResource("Sky_bwi4a")
-
-[sub_resource type="Gradient" id="Gradient_rsn07"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_o4ndg"]
-frequency = 0.005
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0eg4y"]
-color_ramp = SubResource("Gradient_rsn07")
-noise = SubResource("FastNoiseLite_o4ndg")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvlm8"]
-albedo_texture = SubResource("NoiseTexture2D_0eg4y")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_erqug"]
 size = Vector2(8.5, 2)
@@ -54,8 +40,6 @@ environment = SubResource("Environment_ifu4h")
 
 [node name="Exterior" type="MeshInstance3D" parent="."]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, -21.8318)
-mesh = ExtResource("2_axmh1")
-surface_material_override/8 = SubResource("StandardMaterial3D_wvlm8")
 metadata/_edit_group_ = true
 
 [node name="Logo" type="MeshInstance3D" parent="Exterior"]
