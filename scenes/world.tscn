@@ -567,7 +567,7 @@ size = Vector3(2.5, 1, 2)
 material = ExtResource("11_sb7uv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Props"]
-transform = Transform3D(1.27351, 0, 0, 0, 0.94, 0, 0, 0, 1.03751, 7.68999, -1.81697, 31.662)
+transform = Transform3D(1.27346, 0, 0.00887279, 0, 0.94, 0, -0.0108911, 0, 1.03747, 7.68999, -1.81697, 31.662)
 material_override = SubResource("StandardMaterial3D_jwkuq")
 mesh = SubResource("PlaneMesh_5624k")
 
@@ -842,12 +842,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.738, -2.598, 7.446)
 [node name="Crewmate" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7471, -2.502, 19.2419)
 sprite = ExtResource("10_s721i")
-work_ethic = 2.0
 
 [node name="Crewmate2" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29257, -2.502, 17.098)
 sprite = ExtResource("11_4ny4v")
-work_ethic = 2.0
 
 [node name="Crewmate3" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.38437, -2.502, 8.96894)
@@ -858,7 +856,6 @@ sprite = ExtResource("12_khwmr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32029, -2.502, 8.70095)
 person = 2
 sprite = ExtResource("13_em7m4")
-work_ethic = 2.0
 
 [node name="Crewmate5" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2682, -2.502, 19.8672)
@@ -869,19 +866,16 @@ sprite = ExtResource("14_tk0gl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.19375, -2.502, 32.016)
 person = 4
 sprite = ExtResource("15_e74qc")
-work_ethic = 3.0
 
 [node name="Crewmate7" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4121, -2.502, 28.2642)
 person = 5
 sprite = ExtResource("16_lompt")
-work_ethic = 1.5
 
 [node name="Crewmate8" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91789, -2.502, 28.4428)
 person = 5
 sprite = ExtResource("17_1o70l")
-work_ethic = 1.5
 
 [node name="Crewmate9" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2285, -2.502, 17.8126)
@@ -897,7 +891,6 @@ sprite = ExtResource("19_q1xlp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99772, -2.502, 31.5694)
 person = 7
 sprite = ExtResource("20_o2wre")
-work_ethic = 2.5
 
 [node name="Crewmate12" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6453, -2.502, 21.1178)
@@ -913,13 +906,11 @@ sprite = ExtResource("22_ey7of")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5432, -2.502, 0.0359684)
 person = 8
 sprite = ExtResource("23_i0wtr")
-work_ethic = 0.5
 
 [node name="Crewmate15" parent="Crewmates" instance=ExtResource("7_kfv73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58582, -2.502, -0.0533603)
 person = 9
 sprite = ExtResource("24_g0clw")
-work_ethic = 1.5
 
 [node name="Sound" type="Node" parent="."]
 script = ExtResource("54_1rdtm")
