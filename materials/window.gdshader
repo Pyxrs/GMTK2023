@@ -1,6 +1,8 @@
 // Starfield shader v3 by Brian Smith (steampunkdemon.itch.io)
 shader_type spatial;
 
+render_mode unshaded;
+
 uniform vec2 dimensions = vec2(114.0, 48.0);
 uniform vec2 size = vec2(8.5, 2.0);
 uniform sampler2D logo : filter_nearest;

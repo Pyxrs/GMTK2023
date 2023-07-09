@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3ycp7hpdagji"]
+[gd_scene load_steps=15 format=3 uid="uid://b3ycp7hpdagji"]
 
 [ext_resource type="Texture2D" uid="uid://u118r01fl6q5" path="res://Crew sprites/Botany1.png" id="1_g4ev4"]
 [ext_resource type="Script" path="res://scripts/crewmate.gd" id="1_jctd1"]
 [ext_resource type="Texture2D" uid="uid://bhwkaaxkb5tqt" path="res://textures/thoughts.png" id="3_luve1"]
+[ext_resource type="Texture2D" uid="uid://ogdpc2ukcu03" path="res://Crew sprites/Sick Overlay.png" id="3_t3nat"]
+[ext_resource type="AudioStream" uid="uid://dovh1n7x1mqo4" path="res://sound/effects/Jump4.wav" id="4_74wpd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ixuo"]
 atlas = ExtResource("3_luve1")
@@ -81,6 +83,38 @@ alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("1_g4ev4")
 
+[node name="Overlay" type="Sprite3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, -0.2, 0)
+visible = false
+pixel_size = 0.05
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_t3nat")
+
+[node name="Overlay2" type="Sprite3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, -0.2, 0)
+visible = false
+pixel_size = 0.05
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_t3nat")
+
+[node name="Overlay3" type="Sprite3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0.001)
+visible = false
+pixel_size = 0.05
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_t3nat")
+
+[node name="Overlay4" type="Sprite3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, -0.001)
+visible = false
+pixel_size = 0.05
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_t3nat")
+
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 visible = false
@@ -97,15 +131,18 @@ radius = 0.4
 
 [node name="ActionTick" type="Timer" parent="."]
 wait_time = 15.0
-autostart = true
 
 [node name="IdleTick" type="Timer" parent="."]
 wait_time = 2.0
-autostart = true
 
 [node name="ThoughtTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Jump" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_74wpd")
+volume_db = -5.0
+max_distance = 10.0
 
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="timeout" from="ActionTick" to="." method="_on_action_tick_timeout"]
