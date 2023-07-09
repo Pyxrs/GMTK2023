@@ -1240,6 +1240,18 @@ pixel_size = 0.05
 texture_filter = 0
 texture = ExtResource("33_m5p07")
 
+[node name="Sprite3D30" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.567918, 0.00922656, 0.0749252, 0.012483, 0.613241, 0.029037, -0.0742174, 0.0325411, -0.568449, -10.9218, -3.78315, 20.6922)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("33_m5p07")
+
+[node name="Sprite3D31" type="Sprite3D" parent="Props"]
+transform = Transform3D(-0.349226, -0.0164776, 0.454837, 0.012483, 0.613241, 0.029037, -0.453961, 0.0295388, -0.349101, -11.5885, -3.86802, 20.5067)
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("33_m5p07")
+
 [node name="Sprite3D16" type="Sprite3D" parent="Props"]
 transform = Transform3D(-0.892564, 0.0168745, 0.0514023, 0.0194844, 0.892845, 0.0452271, -0.0504708, 0.0462643, -0.891576, 11.9353, -1.39638, 12.3228)
 pixel_size = 0.05
