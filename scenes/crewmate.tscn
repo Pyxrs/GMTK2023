@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3ycp7hpdagji"]
+[gd_scene load_steps=17 format=3 uid="uid://b3ycp7hpdagji"]
 
 [ext_resource type="Texture2D" uid="uid://u118r01fl6q5" path="res://Crew sprites/Botany1.png" id="1_g4ev4"]
 [ext_resource type="Script" path="res://scripts/crewmate.gd" id="1_jctd1"]
@@ -69,6 +69,11 @@ animations = [{
 "name": &"thought",
 "speed": 5.0
 }]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_frgxr"]
+size = Vector3(0.5, 1, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c0uku"]
 
 [node name="Crewmate" type="Node3D"]
 script = ExtResource("1_jctd1")
@@ -143,6 +148,18 @@ one_shot = true
 stream = ExtResource("4_74wpd")
 volume_db = -5.0
 max_distance = 10.0
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555788, 0)
+shape = SubResource("BoxShape3D_frgxr")
+
+[node name="PathfindingPoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.46142, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PathfindingPoint"]
+shape = SubResource("BoxShape3D_c0uku")
 
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="timeout" from="ActionTick" to="." method="_on_action_tick_timeout"]

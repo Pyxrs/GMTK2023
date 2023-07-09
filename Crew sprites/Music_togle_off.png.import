@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ufmiojerksca"
-path="res://.godot/imported/shit_cube.png-70c9359f923f648ce4cd47d225ebfd41.ctex"
+uid="uid://cnfpj5ktwsmo5"
+path="res://.godot/imported/Music_togle_off.png-3fee80ca21e4fdb1152bc2884876df0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/shit_cube.png"
-dest_files=["res://.godot/imported/shit_cube.png-70c9359f923f648ce4cd47d225ebfd41.ctex"]
+source_file="res://Crew sprites/Music_togle_off.png"
+dest_files=["res://.godot/imported/Music_togle_off.png-3fee80ca21e4fdb1152bc2884876df0c.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

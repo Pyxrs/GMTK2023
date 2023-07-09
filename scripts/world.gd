@@ -1,11 +1,93 @@
 extends Node3D
 
+var rooms = {
+	"control": {
+		"closed": 0,
+		"oxygen": 0,
+		"doors": [
+			"Door",
+			"Door2",
+		],
+	},
+	"oxygen": {
+		"closed": 0,
+		"oxygen": 0,
+		"doors": [
+			"Door3",
+		],
+	},
+	"water": {
+		"closed": 0,
+		"oxygen": 0,
+		"doors": [
+			"Door4",
+			"Door5",
+		],
+	},
+	"pond": {
+		"closed": 0,
+		"oxygen": 0,
+		"doors": [
+			"Door6",
+			"Door7",
+		],
+	},
+	"plants": {
+		"closed": 0,
+		"oxygen": 0,
+		"doors": [
+			"Door8",
+		],
+	},
+	"bunks": {
+		"closed": 0,
+		"oxygen": 0,
+		"doors": [
+			"Door9",
+		],
+	}
+}
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_update_timeout():
+	for room in rooms:
+		if rooms[room].closed > 0:
+			rooms[room].closed -= 1
+		if rooms[room].oxygen > 0:
+			rooms[room].oxygen -= 1
+	
+	for room in rooms:
+		for door in rooms[room].doors:
+			if rooms[room].closed > 0:
+				get_node(door).show()
+			else:
+				get_node(door).hide()
+		
+	if rooms.control.oxygen > 0:
+		for a in $Areas/Control.get_overlapping_areas():
+			if a.name == "Area3D":
+				a.get_parent().die()
+	
+	if rooms.oxygen.oxygen > 0:
+		for a in $Areas/Oxygen.get_overlapping_areas():
+			if a.name == "Area3D":
+				a.get_parent().die()
+	
+	if rooms.water.oxygen > 0:
+		for a in $Areas/Water.get_overlapping_areas():
+			if a.name == "Area3D":
+				a.get_parent().die()
+	
+	if rooms.pond.oxygen > 0:
+		for a in $Areas/Pond.get_overlapping_areas():
+			if a.name == "Area3D":
+				a.get_parent().die()
+	
+	if rooms.plants.oxygen > 0:
+		for a in $Areas/Plants.get_overlapping_areas():
+			if a.name == "Area3D":
+				a.get_parent().die()
+	
+	if rooms.bunks.oxygen > 0:
+		for a in $Areas/Bunks.get_overlapping_areas():
+			if a.name == "Area3D":
+				a.get_parent().die()
