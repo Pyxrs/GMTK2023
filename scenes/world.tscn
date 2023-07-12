@@ -522,7 +522,8 @@ theme_override_fonts/font = ExtResource("2_sqn7j")
 text = "Click on the squares
 to switch cameras
 
-Right mouse to pan"
+Right mouse to pan
+Scroll to zoom"
 label_settings = SubResource("LabelSettings_uxihe")
 
 [node name="TextureRect3" type="TextureRect" parent="UI"]
@@ -1130,6 +1131,7 @@ text_overrun_behavior = 1
 script = ExtResource("17_5cx5o")
 
 [node name="Timer" type="Timer" parent="UI"]
+wait_time = 5.0
 autostart = true
 
 [node name="LightmapGI" type="LightmapGI" parent="."]

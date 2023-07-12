@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byyaft7j80aut"
+path="res://.godot/imported/WaterCooler.obj-a9fe65d0edeb0c83f94f8122408eb223.mesh"
+
+[deps]
+
+files=["res://.godot/imported/WaterCooler.obj-a9fe65d0edeb0c83f94f8122408eb223.mesh"]
+
+source_file="res://models/cooler/WaterCooler.obj"
+dest_files=["res://.godot/imported/WaterCooler.obj-a9fe65d0edeb0c83f94f8122408eb223.mesh", "res://.godot/imported/WaterCooler.obj-a9fe65d0edeb0c83f94f8122408eb223.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

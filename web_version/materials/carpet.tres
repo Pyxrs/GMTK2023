@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7or2p3tyf106"]
+
+[ext_resource type="Texture2D" uid="uid://vs73n7u46kro" path="res://textures/shitty_carpet.png" id="1_j8vl8"]
+
+[resource]
+albedo_texture = ExtResource("1_j8vl8")
+uv1_scale = Vector3(0.8, 0.8, 0.8)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0

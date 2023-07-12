@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b8kr2klceerur"]
+
+[ext_resource type="Texture2D" uid="uid://bsrot0mbmphvx" path="res://textures/garden_box.png" id="1_d76u6"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_d76u6")
+uv1_scale = Vector3(0.5, 1.31, -0.5)
+uv1_offset = Vector3(0, 0.4, 0)
+uv1_triplanar = true
+texture_filter = 0
